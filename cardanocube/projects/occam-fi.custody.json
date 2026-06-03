@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/projects/occam-fi",
+  "capture_date": "2026-06-03T08:30:00Z",
+  "capture_method": "wayback-pin: availability then curl -sL --user-agent \"cdo-preserve/1.0\" \"<wayback id_ url>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:30:00Z-cardanocube-graveyard-taxonomy",
+  "sha256": "90c0bf911f80fe10fe2a329a98b7f44bc73427a26871f37038c6f6f5b6bda547",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20250523211043id_/https://cardanocube.com/projects/occam-fi",
+  "bytes_stored": false,
+  "notes": "cardanocube project page for 'occam-fi', listed in /projects/graveyard (curator-declared dead). Wayback-pin of the editorial profile of a defunct Cardano project. bytes_stored:false."
+}

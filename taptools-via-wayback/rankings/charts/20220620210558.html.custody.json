@@ -1,0 +1,16 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://taptools.io/charts",
+  "capture_date": "2026-06-03T08:00:00Z",
+  "capture_method": "curl -sfL --user-agent \"cdo-preserve/1.0\" \"https://web.archive.org/web/20220620210558id_/https://taptools.io/charts\"",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:00:00Z-taptools-rankings",
+  "sha256": "3194d1a28910cc9d3ae7da62d3bceb599ef7da8091549fe884bc4dd9dc9611c4",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "C",
+  "wayback_url": "https://web.archive.org/web/20220620210558id_/https://taptools.io/charts",
+  "post_strip_applied": false,
+  "bytes_stored": true,
+  "notes": "Wayback raw (id_) snapshot of the TapTools charts ranking-grid root. Ranked-row signal count=25; content_bearing=True. Server-rendered ranking content present (pre-SPA era)."
+}

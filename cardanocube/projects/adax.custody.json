@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/projects/adax",
+  "capture_date": "2026-06-03T08:30:00Z",
+  "capture_method": "wayback-pin: availability/Save-Page-Now then curl -sL --user-agent \"cdo-preserve/1.0\" \"<wayback id_ url>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:30:00Z-cardanocube-graveyard-taxonomy",
+  "sha256": "df45b12b464eccec871c065a3502b672a5c41c6c5a94eb4e2b6a6d014e087ee8",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20241204064152id_/https://cardanocube.com/projects/adax",
+  "bytes_stored": false,
+  "notes": "cardanocube project page for 'adax', a project listed in /projects/graveyard (curator-declared dead). Preserved by wayback-pin: the editorial profile of a now-defunct Cardano project \u2014 exactly the perishable Project Memory content. bytes_stored:false."
+}

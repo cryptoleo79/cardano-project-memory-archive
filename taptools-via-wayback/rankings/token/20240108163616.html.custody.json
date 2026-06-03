@@ -1,0 +1,16 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://www.taptools.io/charts/token",
+  "capture_date": "2026-06-03T08:00:00Z",
+  "capture_method": "curl -sfL --user-agent \"cdo-preserve/1.0\" \"https://web.archive.org/web/20240108163616id_/https://www.taptools.io/charts/token\"",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:00:00Z-taptools-rankings",
+  "sha256": "b85be00149f273a7e5e4de2642c8e484710d28161d26a7c600e23ee984d0ccf8",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "C",
+  "wayback_url": "https://web.archive.org/web/20240108163616id_/https://www.taptools.io/charts/token",
+  "post_strip_applied": false,
+  "bytes_stored": true,
+  "notes": "Wayback raw (id_) snapshot of the TapTools token ranking-grid root. Ranked-row signal count=0; content_bearing=False. Empty/near-empty SPA shell (post-SPA-conversion); preserved to document the date TapTools stopped server-rendering ranking state. No XHR-loaded data captured."
+}

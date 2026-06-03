@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/projects/lace",
+  "capture_date": "2026-06-03T05:15:35Z",
+  "capture_method": "wayback-pin via Save-Page-Now (curl -sI -L --user-agent \"cdo-preserve/1.0\" https://web.archive.org/save/{url}); SHA-256 of Wayback-fetched content computed but bytes not stored locally",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T05:15:35Z-cardanocube-lace-pin",
+  "sha256": "95571b88e74cb3408bb271de886d9db072eb64f3e43a5860fbcdc28b229b8a89",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20260603051653/https://www.cardanocube.com/projects/lace",
+  "bytes_stored": false,
+  "notes": "First wayback-pin capture in the Project Memory archive. cardanocube.com ToS is 'All rights reserved' so bytes are not mirrored locally; the Wayback Machine holds the content and this archive holds the chain-of-custody reference."
+}

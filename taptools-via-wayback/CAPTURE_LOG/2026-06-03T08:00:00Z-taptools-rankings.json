@@ -1,0 +1,158 @@
+{
+  "schema": "capture-session-v1",
+  "session_id": "2026-06-03T08:00:00Z-taptools-rankings",
+  "source": "taptools-via-wayback",
+  "capture_date": "2026-06-03T08:00:00Z",
+  "operator": "cryptoleo79",
+  "source_authority_class": "C",
+  "capture_method": "curl -sfL --user-agent \"cdo-preserve/1.0\" <wayback id_ raw snapshot>",
+  "artifacts": [
+    {
+      "path": "rankings/charts/20220515044758.html",
+      "sha256": "4d8631d26fc5708d5dbab8197b640496a421f5dc75e61d140f2edd0cd8c5f47d",
+      "wayback_ts": "20220515044758",
+      "content_bearing": true,
+      "bytes": 31780
+    },
+    {
+      "path": "rankings/charts/20220515185132.html",
+      "sha256": "0476ba9b7b72d532dd36846b03bdb84df7610de6373f554d741021f0a5f89bc6",
+      "wayback_ts": "20220515185132",
+      "content_bearing": true,
+      "bytes": 31784
+    },
+    {
+      "path": "rankings/charts/20220520221221.html",
+      "sha256": "17216cbd010975c2caf8f764b308804e851131ee95d5c1ecbec7edf1f54bc375",
+      "wayback_ts": "20220520221221",
+      "content_bearing": true,
+      "bytes": 34886
+    },
+    {
+      "path": "rankings/charts/20220620210558.html",
+      "sha256": "3194d1a28910cc9d3ae7da62d3bceb599ef7da8091549fe884bc4dd9dc9611c4",
+      "wayback_ts": "20220620210558",
+      "content_bearing": true,
+      "bytes": 51195
+    },
+    {
+      "path": "rankings/charts/20221003215552.html",
+      "sha256": "49a6ad1a8088ff54c9cad66bff3c8906d80914173392be6e839a1f45661f4c65",
+      "wayback_ts": "20221003215552",
+      "content_bearing": true,
+      "bytes": 135555
+    },
+    {
+      "path": "rankings/charts/20230121143735.html",
+      "sha256": "e1d3566469f7fe356b0b8032de7cba075c5ecf55112365ac2d432d09fc98e1c0",
+      "wayback_ts": "20230121143735",
+      "content_bearing": false,
+      "bytes": 25829
+    },
+    {
+      "path": "rankings/charts/20230306003834.html",
+      "sha256": "5cffafe8fb103a7251ec7f06da0154b0ebf39f8a12f0b95663d13c5cc3073f6c",
+      "wayback_ts": "20230306003834",
+      "content_bearing": false,
+      "bytes": 8451
+    },
+    {
+      "path": "rankings/charts/20230320101548.html",
+      "sha256": "95ea14877ba5e61808afe71ebb5fad4589ccc8ecaec143e09471d7536986feda",
+      "wayback_ts": "20230320101548",
+      "content_bearing": false,
+      "bytes": 28576
+    },
+    {
+      "path": "rankings/token/20230409133633.html",
+      "sha256": "604a77b043cf4b384330098e3e371c0940a49f84fd6eafb562177c804b1a757a",
+      "wayback_ts": "20230409133633",
+      "content_bearing": false,
+      "bytes": 29245
+    },
+    {
+      "path": "rankings/token/20230529193419.html",
+      "sha256": "5d153de317e3cf59ae6fbd2c0941fcb02f18d6c87be689fcc323aba846acf4f0",
+      "wayback_ts": "20230529193419",
+      "content_bearing": false,
+      "bytes": 31364
+    },
+    {
+      "path": "rankings/token/20230616152441.html",
+      "sha256": "8c378e3d66e27bfb59eac44297d8b48184c8dc7df45427f3099d95f2f0d6063b",
+      "wayback_ts": "20230616152441",
+      "content_bearing": false,
+      "bytes": 31147
+    },
+    {
+      "path": "rankings/token/20231210082215.html",
+      "sha256": "0fff94d3409f57887f81c20271f278f978736e1467e66f74e81a54975cf2cd26",
+      "wayback_ts": "20231210082215",
+      "content_bearing": false,
+      "bytes": 29378
+    },
+    {
+      "path": "rankings/token/20240108090142.html",
+      "sha256": "a6152fe5d82d41d2da8c1913c27c6cecbd4dcc10a0abdae408cb693a883f6fa0",
+      "wayback_ts": "20240108090142",
+      "content_bearing": false,
+      "bytes": 9861
+    },
+    {
+      "path": "rankings/token/20240108132853.html",
+      "sha256": "778ebe31f90363115973e848e9cf469c81b5a63bbb170c3fbae68bf9ebd2de2f",
+      "wayback_ts": "20240108132853",
+      "content_bearing": false,
+      "bytes": 9856
+    },
+    {
+      "path": "rankings/token/20240108145341.html",
+      "sha256": "9a3e682d4f5b43f1372025e8262f3f170b5b0a2ae8c3dcf7fa406d228a2648fc",
+      "wayback_ts": "20240108145341",
+      "content_bearing": false,
+      "bytes": 9860
+    },
+    {
+      "path": "rankings/token/20240108163616.html",
+      "sha256": "b85be00149f273a7e5e4de2642c8e484710d28161d26a7c600e23ee984d0ccf8",
+      "wayback_ts": "20240108163616",
+      "content_bearing": false,
+      "bytes": 9859
+    },
+    {
+      "path": "rankings/token/20240108174130.html",
+      "sha256": "e7157b4fcfa7d27cc048369bf107bf097e2f188a42ac4fa2be54e3db210095ef",
+      "wayback_ts": "20240108174130",
+      "content_bearing": false,
+      "bytes": 9861
+    },
+    {
+      "path": "rankings/token/20240114185125.html",
+      "sha256": "9c8c662faac871bda2773aec212e2a2ed39f367b2a7a1e60e56c3525448b7361",
+      "wayback_ts": "20240114185125",
+      "content_bearing": false,
+      "bytes": 9637
+    },
+    {
+      "path": "rankings/token/20240222152638.html",
+      "sha256": "bb0b0f0caf43beaa23cc2d659bd6f871d1a4c2b2f23b7b3b02e6628fb54e20ee",
+      "wayback_ts": "20240222152638",
+      "content_bearing": false,
+      "bytes": 36743
+    },
+    {
+      "path": "rankings/token/20240310141347.html",
+      "sha256": "8f8fc77002274768769bc612470f2a1adc1a995207bca77c6afe04058246f3ea",
+      "wayback_ts": "20240310141347",
+      "content_bearing": false,
+      "bytes": 38819
+    },
+    {
+      "path": "rankings/nft/20230410191158.html",
+      "sha256": "6e955b0eefa63bb0f7c820e2a9645e28eaa4706e041992769f29b7a46a90017d",
+      "wayback_ts": "20230410191158",
+      "content_bearing": true,
+      "bytes": 171423
+    }
+  ]
+}

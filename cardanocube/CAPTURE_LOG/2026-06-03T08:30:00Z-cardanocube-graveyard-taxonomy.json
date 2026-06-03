@@ -1,0 +1,168 @@
+{
+  "schema": "capture-session-v1",
+  "session_id": "2026-06-03T08:30:00Z-cardanocube-graveyard-taxonomy",
+  "source": "cardanocube",
+  "capture_date": "2026-06-03T08:30:00Z",
+  "operator": "cryptoleo79",
+  "source_authority_class": "D",
+  "capture_pattern": "wayback-pin",
+  "targets": "taxonomy root, /projects/graveyard list, and graveyard member project pages",
+  "gaps": [],
+  "artifact_count": 22,
+  "artifacts": [
+    {
+      "source_url": "https://cardanocube.com/projects/adax",
+      "path": "projects/adax.custody.json",
+      "sha256": "df45b12b464eccec871c065a3502b672a5c41c6c5a94eb4e2b6a6d014e087ee8",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20241204064152id_/https://cardanocube.com/projects/adax"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/blocktree",
+      "path": "projects/blocktree.custody.json",
+      "sha256": "609f70e857206be2d53fb2f2c0f81601e18f763550d1119d1bd51a94468fc29a",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250317233214id_/https://cardanocube.com/projects/blocktree"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/cardano-nuts",
+      "path": "projects/cardano-nuts.custody.json",
+      "sha256": "e38840a137b1fa633067566f261ae9b126edee58caa2312972acbf4d90ffe156",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20241204052929id_/https://cardanocube.com/projects/cardano-nuts"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/cerra-io",
+      "path": "projects/cerra-io.custody.json",
+      "sha256": "b9ac50e69a5192ea5293189c209e2d10852621a517fc3e5a091e8f483554e195",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603133802id_/https://cardanocube.com/projects/cerra-io"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/charlz-token",
+      "path": "projects/charlz-token.custody.json",
+      "sha256": "233e745b5841d3e8f5201195d3a91118e37ba04876de166542c58e8e831c11a2",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250206121131id_/https://cardanocube.com/projects/charlz-token"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/chibidango-heroes",
+      "path": "projects/chibidango-heroes.custody.json",
+      "sha256": "9fd38c6c9dfae9401882ab0facdc66c7815e1f9788da0d8ff264008db7eda060",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603133938id_/https://cardanocube.com/projects/chibidango-heroes"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/cns",
+      "path": "projects/cns.custody.json",
+      "sha256": "850c7bea9569b9a76ed85f549ed39949af89e1fb9d4c4ca1fbbcfcb4366fc6d1",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260204042051id_/https://cardanocube.com/projects/cns"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/cobraking",
+      "path": "projects/cobraking.custody.json",
+      "sha256": "7bc2122078eb6641edd66575eb9099d5a93d8fc6079aceedbd1ee09252bcbb88",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250119224421id_/https://cardanocube.com/projects/cobraking"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/community-cyber-security-support",
+      "path": "projects/community-cyber-security-support.custody.json",
+      "sha256": "52f6fe4ff135d25a1d0b4a6ed5509e70ee8006879da219a4cce3bf05c1a42895",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603134016id_/https://cardanocube.com/projects/community-cyber-security-support"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/comunidadcardano",
+      "path": "projects/comunidadcardano.custody.json",
+      "sha256": "065a79327346599bcebe0eee7268165840eea02f107b5ec4966ad0b8897820a1",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250317235142id_/https://cardanocube.com/projects/comunidadcardano"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/discoin",
+      "path": "projects/discoin.custody.json",
+      "sha256": "cb72d31f176e890e289efb94a55fd59077c4d07d1ce2a0f1198f517abcad8714",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603134209id_/https://cardanocube.com/projects/discoin"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/eikonikos",
+      "path": "projects/eikonikos.custody.json",
+      "sha256": "51427267b88ea8791a8e5100c32d5465c37f1b3dd1c281c18f67b399cb425729",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250120014747id_/https://cardanocube.com/projects/eikonikos"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/entheosai",
+      "path": "projects/entheosai.custody.json",
+      "sha256": "55db8eb0a78a531502ecbcbfb3d50ebc5c2cdfe402ef2379335c73ff48505140",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250313005217id_/https://cardanocube.com/projects/entheosai"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/graveyard",
+      "path": "projects/graveyard.custody.json",
+      "sha256": "64638400b710d79b050d35aa61e0a710c6008f9089060a19519fb3de60d2afb0",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603133614id_/https://cardanocube.com/projects/graveyard"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/lucid",
+      "path": "projects/lucid.custody.json",
+      "sha256": "7020169202d281ffb125da32424dc17e3ae04595b47d3ae394161b60f61d01fe",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603134246id_/https://cardanocube.com/projects/lucid"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/marketraker",
+      "path": "projects/marketraker.custody.json",
+      "sha256": "7bfcda478e5788f4dd89e598670ca868115fba6498e287dd2dd9f1c12b1715cc",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603134312id_/https://cardanocube.com/projects/marketraker"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/occam-fi",
+      "path": "projects/occam-fi.custody.json",
+      "sha256": "90c0bf911f80fe10fe2a329a98b7f44bc73427a26871f37038c6f6f5b6bda547",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250523211043id_/https://cardanocube.com/projects/occam-fi"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/occamrazer",
+      "path": "projects/occamrazer.custody.json",
+      "sha256": "e3983ebeba93e0b6f656e30e5ee8b75b008830484b587e7c66c08e6e34b15240",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20240714113029id_/https://cardanocube.com/projects/occamrazer"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/pepeblue",
+      "path": "projects/pepeblue.custody.json",
+      "sha256": "c6d3db08ba13c7084e543505bb2c0b4c64de0b02fdeedc2ebabf042995e5b3e6",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20241204053033id_/https://cardanocube.com/projects/pepeblue"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/rats-dao",
+      "path": "projects/rats-dao.custody.json",
+      "sha256": "8e561718e4327be0b6de462f7c3120cafda5597e5e7e3c5c5f76e2804dddf3a0",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20250116072946id_/https://cardanocube.com/projects/rats-dao"
+    },
+    {
+      "source_url": "https://cardanocube.com/projects/virusx",
+      "path": "projects/virusx.custody.json",
+      "sha256": "7e0ea52040e6630518f62e9f1c01a175ee41f936e3aee718c1916b08553647c2",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20240722133646id_/https://cardanocube.com/projects/virusx"
+    },
+    {
+      "source_url": "https://cardanocube.com/categories",
+      "path": "taxonomy/categories.custody.json",
+      "sha256": "d7ffba86fabdd55fb0831bb05075d2ea3f201851cb72e773527df6bc4ef89bc6",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260603133501id_/https://cardanocube.com/categories"
+    }
+  ]
+}

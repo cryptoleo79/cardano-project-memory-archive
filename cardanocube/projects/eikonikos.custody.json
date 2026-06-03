@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/projects/eikonikos",
+  "capture_date": "2026-06-03T08:30:00Z",
+  "capture_method": "wayback-pin: availability/Save-Page-Now then curl -sL --user-agent \"cdo-preserve/1.0\" \"<wayback id_ url>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:30:00Z-cardanocube-graveyard-taxonomy",
+  "sha256": "51427267b88ea8791a8e5100c32d5465c37f1b3dd1c281c18f67b399cb425729",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20250120014747id_/https://cardanocube.com/projects/eikonikos",
+  "bytes_stored": false,
+  "notes": "cardanocube project page for 'eikonikos', a project listed in /projects/graveyard (curator-declared dead). Preserved by wayback-pin: the editorial profile of a now-defunct Cardano project \u2014 exactly the perishable Project Memory content. bytes_stored:false."
+}

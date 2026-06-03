@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/projects/rats-dao",
+  "capture_date": "2026-06-03T08:30:00Z",
+  "capture_method": "wayback-pin: availability/SPN then curl -sL --user-agent \"cdo-preserve/1.0\" \"<wayback id_ url>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:30:00Z-cardanocube-graveyard-taxonomy",
+  "sha256": "8e561718e4327be0b6de462f7c3120cafda5597e5e7e3c5c5f76e2804dddf3a0",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20250116072946id_/https://cardanocube.com/projects/rats-dao",
+  "bytes_stored": false,
+  "notes": "cardanocube project page for 'rats-dao', listed in /projects/graveyard (curator-declared dead). Wayback-pin of the editorial profile of a defunct Cardano project. bytes_stored:false."
+}

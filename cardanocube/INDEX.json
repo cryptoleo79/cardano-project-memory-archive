@@ -3,8 +3,10 @@
   "source": "cardanocube",
   "source_authority_class": "D",
   "capture_pattern": "wayback-pin",
-  "last_updated": "2026-06-03T05:06:34Z",
-  "artifact_count": 0,
-  "session_log_paths": [],
-  "notes": "cardanocube.com per-project pages preserved by reference via the Wayback Machine. No bytes stored locally; .custody.json manifests carry bytes_stored: false."
+  "last_updated": "2026-06-03T08:30:00Z",
+  "artifact_count": 23,
+  "session_log_paths": [
+    "CAPTURE_LOG/2026-06-03T08:30:00Z-cardanocube-graveyard-taxonomy.json"
+  ],
+  "notes": "cardanocube.com per-project pages preserved by reference (wayback-pin; bytes_stored:false). This session pinned the taxonomy root (/categories, ~74 categories), /projects/graveyard, and the graveyard member project pages (defunct projects). 1 graveyard slug(s) had no Wayback snapshot and failed Save-Page-Now: occam-fi. Per-project editorial content lives on the Wayback Machine; this archive holds chain-of-custody references."
 }

@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/projects/entheosai",
+  "capture_date": "2026-06-03T08:30:00Z",
+  "capture_method": "wayback-pin: availability/Save-Page-Now then curl -sL --user-agent \"cdo-preserve/1.0\" \"<wayback id_ url>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:30:00Z-cardanocube-graveyard-taxonomy",
+  "sha256": "55db8eb0a78a531502ecbcbfb3d50ebc5c2cdfe402ef2379335c73ff48505140",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20250313005217id_/https://cardanocube.com/projects/entheosai",
+  "bytes_stored": false,
+  "notes": "cardanocube project page for 'entheosai', a project listed in /projects/graveyard (curator-declared dead). Preserved by wayback-pin: the editorial profile of a now-defunct Cardano project \u2014 exactly the perishable Project Memory content. bytes_stored:false."
+}

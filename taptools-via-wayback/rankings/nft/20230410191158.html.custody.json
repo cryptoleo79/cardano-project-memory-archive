@@ -1,0 +1,16 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://www.taptools.io/charts/nft",
+  "capture_date": "2026-06-03T08:00:00Z",
+  "capture_method": "curl -sfL --user-agent \"cdo-preserve/1.0\" \"https://web.archive.org/web/20230410191158id_/https://www.taptools.io/charts/nft\"",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-03T08:00:00Z-taptools-rankings",
+  "sha256": "6e955b0eefa63bb0f7c820e2a9645e28eaa4706e041992769f29b7a46a90017d",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "C",
+  "wayback_url": "https://web.archive.org/web/20230410191158id_/https://www.taptools.io/charts/nft",
+  "post_strip_applied": false,
+  "bytes_stored": true,
+  "notes": "Wayback raw (id_) snapshot of the TapTools NFT ranking-grid root. Nav taxonomy + collection scaffolding server-rendered; live NFT ranking numbers are XHR-loaded and not captured by Wayback."
+}
