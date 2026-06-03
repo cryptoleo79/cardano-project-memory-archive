@@ -1,0 +1,10 @@
+{
+  "schema": "cardano-project-memory-source-index-v1",
+  "source": "cardanocube",
+  "source_authority_class": "D",
+  "capture_pattern": "wayback-pin",
+  "last_updated": "2026-06-03T05:06:34Z",
+  "artifact_count": 0,
+  "session_log_paths": [],
+  "notes": "cardanocube.com per-project pages preserved by reference via the Wayback Machine. No bytes stored locally; .custody.json manifests carry bytes_stored: false."
+}

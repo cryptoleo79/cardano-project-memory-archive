@@ -1,0 +1,10 @@
+{
+  "schema": "cardano-project-memory-source-index-v1",
+  "source": "cardano-org-discover",
+  "source_authority_class": "B",
+  "capture_pattern": "wayback-mirror",
+  "last_updated": "2026-06-03T05:06:34Z",
+  "artifact_count": 0,
+  "session_log_paths": [],
+  "notes": "cardano.org/discover Cardano Foundation project discovery landing."
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "cardano-project-memory-source-index-v1",
+  "source": "cardano-token-registry",
+  "source_authority_class": "B",
+  "capture_pattern": "git-mirror",
+  "last_updated": "2026-06-03T05:06:34Z",
+  "artifact_count": 0,
+  "session_log_paths": [],
+  "notes": "cardano-foundation/cardano-token-registry CIP-26 off-chain token registry. Bare git mirror clone (same pattern as catalyst-core in the Catalyst archive)."
+}

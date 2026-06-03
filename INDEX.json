@@ -1,0 +1,62 @@
+{
+  "schema": "cardano-project-memory-archive-index-v1",
+  "archive_version": "1.0.0",
+  "memory_layer_reference": "https://github.com/cryptoleo79/cardano-delegation-observatory/blob/main/docs/CARDANO_MEMORY_LAYER.md",
+  "registry_reference": "https://github.com/cryptoleo79/cardano-delegation-observatory/blob/main/docs/PROJECT_MEMORY_REGISTRY.md",
+  "last_updated": "2026-06-03T05:06:34Z",
+  "last_session_id": null,
+  "subfolders": {
+    "taptools-via-wayback": {
+      "source_authority_class": "C",
+      "capture_pattern": "wayback-mirror",
+      "artifact_count": 0,
+      "last_capture_date": null,
+      "subfolder_index": "taptools-via-wayback/INDEX.json",
+      "notes": "Live taptools.io is a Next.js SPA returning empty shells. Preservation surface is the Wayback Machine's pre-SPA snapshots."
+    },
+    "cardanocube": {
+      "source_authority_class": "D",
+      "capture_pattern": "wayback-pin",
+      "artifact_count": 0,
+      "last_capture_date": null,
+      "subfolder_index": "cardanocube/INDEX.json",
+      "notes": "Live cardanocube.com is server-rendered. ToS is 'All rights reserved'; archive uses the wayback-pin pattern (Wayback URLs referenced, bytes not stored locally)."
+    },
+    "built-on-cardano": {
+      "source_authority_class": "B",
+      "capture_pattern": "wayback-mirror",
+      "artifact_count": 0,
+      "last_capture_date": null,
+      "subfolder_index": "built-on-cardano/INDEX.json"
+    },
+    "cardano-org-discover": {
+      "source_authority_class": "B",
+      "capture_pattern": "wayback-mirror",
+      "artifact_count": 0,
+      "last_capture_date": null,
+      "subfolder_index": "cardano-org-discover/INDEX.json"
+    },
+    "cardano-token-registry": {
+      "source_authority_class": "B",
+      "capture_pattern": "git-mirror",
+      "artifact_count": 0,
+      "last_capture_date": null,
+      "subfolder_index": "cardano-token-registry/INDEX.json"
+    },
+    "defillama-cardano": {
+      "source_authority_class": "D",
+      "capture_pattern": "wayback-mirror",
+      "artifact_count": 0,
+      "last_capture_date": null,
+      "subfolder_index": "defillama-cardano/INDEX.json"
+    },
+    "on-chain": {
+      "source_authority_class": "A",
+      "capture_pattern": "query-record-only",
+      "artifact_count": 0,
+      "last_capture_date": null,
+      "subfolder_index": "on-chain/INDEX.json",
+      "notes": "Query specs only; the chain itself preserves the transactions and identifiers."
+    }
+  }
+}

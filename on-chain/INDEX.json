@@ -1,0 +1,10 @@
+{
+  "schema": "cardano-project-memory-source-index-v1",
+  "source": "on-chain",
+  "source_authority_class": "A",
+  "capture_pattern": "query-record-only",
+  "last_updated": "2026-06-03T05:06:34Z",
+  "artifact_count": 0,
+  "session_log_paths": [],
+  "notes": "Canonical Koios queries for on-chain identifiers that ground the editorial layer. The chain itself preserves the bytes."
+}

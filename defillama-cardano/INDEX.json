@@ -1,0 +1,10 @@
+{
+  "schema": "cardano-project-memory-source-index-v1",
+  "source": "defillama-cardano",
+  "source_authority_class": "D",
+  "capture_pattern": "wayback-mirror",
+  "last_updated": "2026-06-03T05:06:34Z",
+  "artifact_count": 0,
+  "session_log_paths": [],
+  "notes": "DefiLlama Cardano protocol subset; DeFi-only."
+}

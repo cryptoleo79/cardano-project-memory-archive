@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cryptoleo79/cardano-catalyst-archive/schema/custody-v1.json",
+  "title": "Catalyst artifact chain-of-custody manifest (custody-v1)",
+  "description": "Per-artifact sidecar recording the provenance of one captured file in the Cardano Catalyst archive. See METHODOLOGY.md §24.4 and CATALYST_ARCHIVE_REPOSITORY_DESIGN.md §6 in the observatory repository for the authoritative specification.",
+  "type": "object",
+  "required": [
+    "schema",
+    "source_url",
+    "capture_date",
+    "capture_method",
+    "capture_operator",
+    "sha256",
+    "content_type",
+    "source_authority_class"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "custody-v1"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "The exact URL the artifact represents, including query parameters."
+    },
+    "source_url_aliases": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "description": "Optional. Historical URLs that previously resolved to the same content (e.g., a relocated GitHub repo's old URL)."
+    },
+    "capture_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp of the fetch, ISO 8601, second precision or better."
+    },
+    "capture_method": {
+      "type": "string",
+      "description": "Tool and flags used. Examples: 'curl -sL --user-agent cdo-preserve/1.0', 'wget --mirror --convert-links ...', 'git clone --mirror'."
+    },
+    "capture_operator": {
+      "type": "string",
+      "description": "Who performed the capture. GitHub handle, attribution string, or 'anonymous'."
+    },
+    "capture_session_id": {
+      "type": "string",
+      "description": "Optional. References the per-session CAPTURE_LOG.json for bulk captures."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 of the raw bytes as written to disk, lowercase hex."
+    },
+    "content_type": {
+      "type": "string",
+      "description": "HTTP Content-Type header value, or equivalent for non-HTTP captures."
+    },
+    "http_status": {
+      "type": ["integer", "null"],
+      "description": "HTTP response status code. Null for non-HTTP captures."
+    },
+    "source_authority_class": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "E"],
+      "description": "Per METHODOLOGY.md §24.3. A=on-chain, B=official, C=at-risk platform, D=community, E=researcher."
+    },
+    "wayback_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "Wayback Machine snapshot URL. Mandatory for Class C captures (the canonical fetch target). Supplementary for Class B; null permitted if Wayback submission has not yet been confirmed or has failed permanently. Null is permitted only if notes documents the failure."
+    },
+    "post_strip_applied": {
+      "type": "boolean",
+      "description": "Optional. True for Wayback-sourced HTML where the Wayback toolbar was stripped before hashing. Default false."
+    },
+    "bytes_stored": {
+      "type": "boolean",
+      "description": "Optional. True (or absent, default true) for wayback-mirror captures where the bytes live in this archive. False for wayback-pin captures where only the Wayback Machine URL is referenced and the bytes are not stored locally. When false, the artifact file at the manifest's adjacent path does NOT exist; verification is performed by re-fetching wayback_url and comparing SHA-256."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Operationally relevant context. Never editorial."
+    }
+  }
+}

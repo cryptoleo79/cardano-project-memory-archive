@@ -1,0 +1,60 @@
+Cardano Project Memory archive
+Copyright 2026 cryptoleo79 and contributors
+
+This repository contains four categories of files. Each category is
+governed by a different license, summarized here for clarity. The
+.custody.json sidecar of each captured artifact (or each pinned
+reference) is the canonical record of that artifact's specific terms.
+
+(1) Code (under _verify/ and any future tooling)
+    Licensed under the Apache License, Version 2.0. See LICENSE.
+
+(2) Authored metadata
+    Files that this archive's tooling or its operator produced to
+    describe, index, or reference the preserved content. Examples:
+    .custody.json sidecars, CAPTURE_LOG.json session logs, INDEX.json
+    enumerations, fund-mapping or similar derivative files.
+
+    These files are simultaneously released under CC0 1.0 Universal
+    (Creative Commons Zero) and under the Apache License, Version 2.0.
+    Downstream users may use either license at their option.
+
+(3) Captured third-party content (wayback-mirror pattern)
+    HTML, JSON, binary, and other artifacts mirrored from external
+    sources into this archive. These are preserved here under
+    archival-preservation principles. Each artifact's .custody.json
+    sidecar records the source URL from which downstream users can
+    determine the applicable license. Downstream re-use must respect
+    the source-of-origin license; the .custody.json is the canonical
+    reference for determining that license.
+
+(4) Pinned third-party references (wayback-pin pattern)
+    For sources whose Terms of Service do not grant republication
+    rights, this archive does NOT mirror the bytes. Instead, the
+    archive holds a .custody.json reference manifest pointing at a
+    Wayback Machine snapshot URL. The manifest carries
+    bytes_stored: false to indicate the reference-only mode. The
+    archive operator submits the source URL to the Wayback Machine's
+    Save Page Now endpoint if no recent snapshot exists, and records
+    the resulting Wayback URL in the manifest.
+
+    The cardanocube.com content in this archive is preserved via
+    the wayback-pin pattern. The TapTools content (from the Wayback
+    Machine, pre-SPA snapshots) is preserved via the wayback-mirror
+    pattern. The choice is per-source and is documented in each
+    subfolder's README.md.
+
+    For wayback-pin entries, downstream re-use of the captured
+    content must respect both the source's license terms and the
+    Wayback Machine's terms.
+
+The archive operator does not assert copyright over captured
+third-party content. The archive holds the content (or holds
+references to the content) under fair-use / archival-preservation
+grounds, with chain-of-custody manifests documenting how, when, and
+from where each capture or pin was performed.
+
+This NOTICE file is the operator's good-faith disclosure of the
+license layering and is not legal advice. A future legal review may
+produce refinements; if it does, this file is updated and the change
+is recorded in CHANGELOG.md.
