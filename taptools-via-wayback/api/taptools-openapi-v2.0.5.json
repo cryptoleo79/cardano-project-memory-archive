@@ -1,0 +1,6571 @@
+{
+  "components": {
+    "responses": {
+      "400": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "example": "Bad Request",
+                  "type": "string"
+                },
+                "message": {
+                  "example": "Ensure all required parameters are passed",
+                  "type": "string"
+                },
+                "status": {
+                  "example": 400,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Bad Request"
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "example": "Not authorized",
+                  "type": "string"
+                },
+                "message": {
+                  "example": "Ensure you are using a valid API key",
+                  "type": "string"
+                },
+                "status": {
+                  "example": 401,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Not Authorized"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "example": "Item not found",
+                  "type": "string"
+                },
+                "message": {
+                  "example": "Could not find item based on query parameters",
+                  "type": "string"
+                },
+                "status": {
+                  "example": 404,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "406": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "example": "Not acceptable",
+                  "type": "string"
+                },
+                "message": {
+                  "example": "Invalid query parameters",
+                  "type": "string"
+                },
+                "status": {
+                  "example": 406,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Not acceptable"
+      },
+      "429": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "example": "Rate limit exceeded",
+                  "type": "string"
+                },
+                "message": {
+                  "example": "Your rate limit has been exceeded",
+                  "type": "string"
+                },
+                "status": {
+                  "example": 429,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Rate Limit Exceeded"
+      },
+      "500": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "example": "Internal Server Error",
+                  "type": "string"
+                },
+                "message": {
+                  "example": "An unexpected response was received from the backend.",
+                  "type": "string"
+                },
+                "status": {
+                  "example": 500,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Interval Server Error"
+      }
+    },
+    "schemas": {
+      "integration_asset": {
+        "properties": {
+          "asset": {
+            "example": {
+              "circulatingSupply": 1500000,
+              "id": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "name": "snek coin",
+              "symbol": "SNEK",
+              "totalSupply": 2000000
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "asset"
+        ],
+        "type": "object"
+      },
+      "integration_block": {
+        "properties": {
+          "block": {
+            "example": {
+              "blockNumber": 10937538,
+              "blockTimestamp": 1728408176
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "block"
+        ],
+        "type": "object"
+      },
+      "integration_events": {
+        "properties": {
+          "events": {
+            "items": {
+              "description": "UTxOs",
+              "properties": {
+                "amount0": {
+                  "type": "string"
+                },
+                "amount1": {
+                  "type": "string"
+                },
+                "asset0In": {
+                  "example": "0",
+                  "type": "string"
+                },
+                "asset0Out": {
+                  "example": "200",
+                  "type": "string"
+                },
+                "asset1In": {
+                  "example": "10",
+                  "type": "string"
+                },
+                "asset1Out": {
+                  "example": "0",
+                  "type": "string"
+                },
+                "block": {
+                  "example": {
+                    "blockNumber": 10937538,
+                    "blockTimestamp": 1728408176
+                  },
+                  "required": [
+                    "blockNumber",
+                    "blockTimestamp"
+                  ],
+                  "type": "object"
+                },
+                "eventIndex": {
+                  "example": 10937538000000,
+                  "type": "integer"
+                },
+                "eventType": {
+                  "example": "swap",
+                  "type": "string"
+                },
+                "maker": {
+                  "example": "addr1q8ete2wpeulwq5yxutftpqdmgu2rntld85x7ztswahs2t0daytnqe6ea4p09jpv8mz3umpsdk9gkqvkhca7nngxrp2lqnh0x4l",
+                  "type": "string"
+                },
+                "pairId": {
+                  "example": "nikeswaporderbook.44759dc63605dbf88700b241ee451aa5b0334cf2b34094d836fbdf8642757a7a696542656520.ada",
+                  "type": "string"
+                },
+                "reserves": {
+                  "example": {
+                    "asset0": "20000000",
+                    "asset1": "10000"
+                  },
+                  "required": [
+                    "asset0",
+                    "asset1"
+                  ],
+                  "type": "object"
+                },
+                "txnId": {
+                  "example": "a88d97638faf9fa63e4f4f8b4fd4664ae3505ae050bc48afde48f3c1e7b1e07b",
+                  "type": "string"
+                },
+                "txnIndex": {
+                  "example": 115981434,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "block",
+                "txnId",
+                "txnIndex",
+                "eventIndex",
+                "maker",
+                "pairId",
+                "eventType",
+                "amount0",
+                "amount1",
+                "asset0In",
+                "asset1Out",
+                "asset0Out",
+                "asset1In",
+                "reserves"
+              ]
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "events"
+        ],
+        "type": "object"
+      },
+      "integration_exchange": {
+        "properties": {
+          "exchange": {
+            "example": {
+              "factoryAddress": "3",
+              "logoURL": "https://www.logos.com/minswap.png",
+              "name": "Minswap"
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "exchange"
+        ],
+        "type": "object"
+      },
+      "integration_latest_block": {
+        "properties": {
+          "block": {
+            "example": {
+              "blockNumber": 10937538,
+              "blockTimestamp": 1728408176
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "block"
+        ],
+        "type": "object"
+      },
+      "integration_pair": {
+        "properties": {
+          "pair": {
+            "example": {
+              "asset0Id": "279c909f348e533da5808898f87f9a14bb2c3dfbbacccd631d927a3f534e454b",
+              "asset1Id": "000000000000000000000000000000000000000000000000000000006c6f76656c616365",
+              "createdAtBlockNumber": 10937538,
+              "createdAtBlockTimestamp": 1728408176,
+              "createdAtTxnId": 115981434,
+              "factoryAddress": "4",
+              "id": "nikeswaporderbook.44759dc63605dbf88700b241ee451aa5b0334cf2b34094d836fbdf8642757a7a696542656520.ada"
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "pair"
+        ],
+        "type": "object"
+      },
+      "market_nft_asset_sales": {
+        "items": {
+          "description": "NFT Sales.",
+          "properties": {
+            "buyerStakeAddress": {
+              "example": "stake1address2",
+              "type": "string"
+            },
+            "price": {
+              "example": 8000,
+              "type": "number"
+            },
+            "sellerStakeAddress": {
+              "example": "stake1address1",
+              "type": "string"
+            },
+            "time": {
+              "example": 16000840,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "buyerStakeAddress",
+            "price",
+            "sellerStakeAddress",
+            "time"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_asset_stats": {
+        "properties": {
+          "isListed": {
+            "example": true,
+            "type": "bool"
+          },
+          "lastListedPrice": {
+            "example": 3850,
+            "type": "number"
+          },
+          "lastListedTime": {
+            "example": 160002490,
+            "type": "integer"
+          },
+          "lastSoldPrice": {
+            "example": 4800,
+            "type": "number"
+          },
+          "lastSoldTime": {
+            "example": 160008490,
+            "type": "integer"
+          },
+          "owners": {
+            "example": 6,
+            "type": "integer"
+          },
+          "sales": {
+            "example": 5,
+            "type": "integer"
+          },
+          "timesListed": {
+            "example": 8,
+            "type": "integer"
+          },
+          "volume": {
+            "example": 54234,
+            "type": "number"
+          }
+        },
+        "required": [
+          "timesListed",
+          "owners",
+          "sales",
+          "volume",
+          "lastSoldTime",
+          "lastSoldPrice",
+          "lastListedTime",
+          "lastListedPrice",
+          "isListed"
+        ],
+        "type": "object"
+      },
+      "market_nft_asset_traits": {
+        "properties": {
+          "rank": {
+            "example": 51,
+            "type": "integer"
+          },
+          "traits": {
+            "items": {
+              "description": "Traits info",
+              "properties": {
+                "category": {
+                  "example": "background",
+                  "type": "string"
+                },
+                "name": {
+                  "example": "red",
+                  "type": "string"
+                },
+                "price": {
+                  "example": 100,
+                  "type": "number"
+                },
+                "rarity": {
+                  "example": 0.4,
+                  "type": "number"
+                }
+              },
+              "required": [
+                "category",
+                "name",
+                "rarity",
+                "price"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "rank",
+          "traits"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_assets": {
+        "items": {
+          "description": "Collection assets.",
+          "properties": {
+            "image": {
+              "example": "ipfs://QmeDi3J1exQYnGAuwZv7b6sAuDBAo2hYdAMM1KGgS7KFa4",
+              "type": "string"
+            },
+            "name": {
+              "example": "ClayNation3725",
+              "type": "string"
+            },
+            "price": {
+              "example": 20,
+              "type": "number"
+            },
+            "rank": {
+              "example": 2,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "rank",
+            "price",
+            "image"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_holders_distribution": {
+        "properties": {
+          "1": {
+            "example": 1154,
+            "type": "integer"
+          },
+          "10-24": {
+            "example": 60,
+            "type": "integer"
+          },
+          "2-4": {
+            "example": 631,
+            "type": "integer"
+          },
+          "25+": {
+            "example": 2,
+            "type": "integer"
+          },
+          "5-9": {
+            "example": 327,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "1",
+          "2-4",
+          "5-9",
+          "10-24",
+          "25+"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_holders_top": {
+        "items": {
+          "description": "Top collection holders",
+          "properties": {
+            "address": {
+              "example": "stake1u8mvwfn298a4dkm92hrgeupnnuzhxfwl5lauzuejl5cf8esrtjn6w",
+              "type": "string"
+            },
+            "amount": {
+              "example": 27,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "amount"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_holders_trended": {
+        "items": {
+          "description": "Trended collection holders",
+          "properties": {
+            "holders": {
+              "example": 3125,
+              "type": "integer"
+            },
+            "time": {
+              "example": 1705874400,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "time",
+            "holders"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_info": {
+        "properties": {
+          "description": {
+            "example": "The Ape Society is a collection of 7,000 NFTs generated on the Cardano blockchain.",
+            "type": "string"
+          },
+          "discord": {
+            "example": "https://discord.gg/theapesociety",
+            "type": "string"
+          },
+          "logo": {
+            "example": "ipfs://QmVT8QGerKMLaJkxdUqefw7V7fjccGgcKjLnbMavisELsf",
+            "type": "string"
+          },
+          "name": {
+            "example": "The Ape Society",
+            "type": "string"
+          },
+          "supply": {
+            "example": 10000,
+            "type": "integer"
+          },
+          "twitter": {
+            "example": "https://twitter.com/the_ape_society",
+            "type": "string"
+          },
+          "website": {
+            "example": "https://www.theapesociety.io/",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "logo",
+          "supply",
+          "twitter",
+          "discord",
+          "website",
+          "description"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_listings": {
+        "properties": {
+          "listings": {
+            "example": 168,
+            "type": "integer"
+          },
+          "supply": {
+            "example": 1000,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "listings",
+          "supply"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_listings_depth": {
+        "items": {
+          "description": "Listings depth",
+          "properties": {
+            "avg": {
+              "example": 4850.0,
+              "type": "number"
+            },
+            "count": {
+              "example": 96,
+              "type": "integer"
+            },
+            "price": {
+              "example": 9600.0,
+              "type": "number"
+            },
+            "total": {
+              "example": 456000.0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "price",
+            "avg",
+            "total"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_listings_individual": {
+        "items": {
+          "description": "Information about listing",
+          "properties": {
+            "image": {
+              "example": "ipfs://QmdnZKmDWd85BLKfsHnrJExRKE71zPGawwy7jWhc2wBwmM",
+              "type": "string"
+            },
+            "market": {
+              "example": "jpg.store",
+              "type": "string"
+            },
+            "name": {
+              "example": "ClayNation3725",
+              "type": "string"
+            },
+            "price": {
+              "example": 4925,
+              "type": "number"
+            },
+            "time": {
+              "example": 1680135943,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "image",
+            "price",
+            "time"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_listings_trended": {
+        "items": {
+          "description": "Listings",
+          "properties": {
+            "listings": {
+              "example": 592,
+              "type": "integer"
+            },
+            "price": {
+              "example": 205,
+              "type": "number"
+            },
+            "time": {
+              "example": 1680574100,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "time",
+            "listings",
+            "price"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_ohlcv": {
+        "items": {
+          "description": "OHLCV interval",
+          "properties": {
+            "close": {
+              "example": 4150,
+              "type": "number"
+            },
+            "high": {
+              "example": 4150,
+              "type": "number"
+            },
+            "low": {
+              "example": 3950,
+              "type": "number"
+            },
+            "open": {
+              "example": 4000,
+              "type": "number"
+            },
+            "time": {
+              "example": 1680574100,
+              "type": "integer"
+            },
+            "volume": {
+              "example": 61480,
+              "type": "number"
+            }
+          },
+          "required": [
+            "time",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_rarity": {
+        "properties": {
+          "Accessories": {
+            "example": {
+              "Bowtie": 0.0709,
+              "Collar": 0.1184
+            },
+            "type": "object"
+          },
+          "Background": {
+            "example": {
+              "Cyan": 0.1316,
+              "Lilac": 0.147
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "market_nft_collection_rarity_rank": {
+        "properties": {
+          "rank": {
+            "example": 7346,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "rank"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_stats": {
+        "properties": {
+          "listings": {
+            "example": 673,
+            "type": "integer"
+          },
+          "owners": {
+            "example": 1124,
+            "type": "integer"
+          },
+          "price": {
+            "example": 450,
+            "type": "number"
+          },
+          "sales": {
+            "example": 4782,
+            "type": "integer"
+          },
+          "supply": {
+            "example": 10000,
+            "type": "integer"
+          },
+          "topOffer": {
+            "example": 400,
+            "type": "number"
+          },
+          "volume": {
+            "example": 16844521,
+            "type": "number"
+          }
+        },
+        "required": [
+          "volume",
+          "supply",
+          "price",
+          "owners",
+          "listings",
+          "topOffer"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_stats_extended": {
+        "properties": {
+          "listings": {
+            "example": 673,
+            "type": "integer"
+          },
+          "listingsPctChg": {
+            "example": 0.11,
+            "type": "number"
+          },
+          "owners": {
+            "example": 1124,
+            "type": "integer"
+          },
+          "ownersPctChg": {
+            "example": 0.05,
+            "type": "number"
+          },
+          "price": {
+            "example": 450,
+            "type": "number"
+          },
+          "pricePctChg": {
+            "example": 0.024,
+            "type": "number"
+          },
+          "sales": {
+            "example": 5431,
+            "type": "integer"
+          },
+          "salesPctChg": {
+            "example": 0.008,
+            "type": "number"
+          },
+          "supply": {
+            "example": 10000,
+            "type": "integer"
+          },
+          "topOffer": {
+            "example": 380,
+            "type": "number"
+          },
+          "volume": {
+            "example": 16844521,
+            "type": "number"
+          },
+          "volumePctChg": {
+            "example": 0.014,
+            "type": "number"
+          }
+        },
+        "required": [
+          "listings",
+          "listingsPctChg",
+          "owners",
+          "ownersPctChg",
+          "price",
+          "pricePctChg",
+          "supply",
+          "volume",
+          "volumePctChg",
+          "sales",
+          "salesPctChg",
+          "topOffer"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_trades": {
+        "items": {
+          "description": "Information about trade",
+          "properties": {
+            "buyerAddress": {
+              "example": "addr1qxvpuw8dmmwvzs4lvjmuamn7l748n9wuvrumuz27v8mt6kzktn257cny8gcw0f99ft99apqdakca6grf9stpptjdyevqffsm7e",
+              "type": "string"
+            },
+            "collectionName": {
+              "example": "Clay Nation",
+              "type": "string"
+            },
+            "hash": {
+              "example": "505cb5a55f7bbe0ed70e58d97b105220ea662fb91bbd89e915ca85f07500a9b9",
+              "type": "string"
+            },
+            "image": {
+              "example": "ipfs://QmdnZKmDWd85BLKfsHnrJExRKE71zPGawwy7jWhc2wBwmM",
+              "type": "string"
+            },
+            "market": {
+              "example": "jpg.store",
+              "type": "string"
+            },
+            "name": {
+              "example": "ClayNation3725",
+              "type": "string"
+            },
+            "policy": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            },
+            "price": {
+              "example": 4925,
+              "type": "number"
+            },
+            "sellerAddress": {
+              "example": "addr1q9wmpjmp767fewhqswq89lua7csns8a704hrjljdt5r40ssstt62h0erkvx72zarcydnlldp0sj0ml02w3k06r8mpy8qm8eqkf",
+              "type": "string"
+            },
+            "time": {
+              "example": 1680135943,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "price",
+            "market",
+            "time",
+            "image",
+            "buyerAddress",
+            "sellerAddress",
+            "policy",
+            "collectionName",
+            "hash"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_collection_trades_stats": {
+        "properties": {
+          "buyers": {
+            "example": 35,
+            "type": "integer"
+          },
+          "sales": {
+            "example": 42,
+            "type": "integer"
+          },
+          "sellers": {
+            "example": 16,
+            "type": "integer"
+          },
+          "volume": {
+            "example": 247521,
+            "type": "number"
+          }
+        },
+        "required": [
+          "volume",
+          "sales",
+          "buyers",
+          "sellers"
+        ],
+        "type": "object"
+      },
+      "market_nft_collection_traits_price": {
+        "description": "Collection Traits Prices.",
+        "properties": {
+          "background": {
+            "example": {
+              "blue": 5,
+              "red": 8
+            },
+            "type": "object"
+          },
+          "hair": {
+            "example": {
+              "black": 10,
+              "blonde": 30
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "market_nft_collection_volume_trended": {
+        "items": {
+          "description": "Volume",
+          "properties": {
+            "price": {
+              "example": 205,
+              "type": "number"
+            },
+            "sales": {
+              "example": 153,
+              "type": "integer"
+            },
+            "time": {
+              "example": 1680574100,
+              "type": "integer"
+            },
+            "volume": {
+              "example": 12034,
+              "type": "number"
+            }
+          },
+          "required": [
+            "time",
+            "volume",
+            "sales",
+            "price"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_market_stats": {
+        "properties": {
+          "addresses": {
+            "example": 5321,
+            "type": "integer"
+          },
+          "buyers": {
+            "example": 3451,
+            "type": "integer"
+          },
+          "sales": {
+            "example": 7832,
+            "type": "integer"
+          },
+          "sellers": {
+            "example": 3110,
+            "type": "integer"
+          },
+          "volume": {
+            "example": 876345,
+            "type": "number"
+          }
+        },
+        "required": [
+          "volume",
+          "sales",
+          "addresses",
+          "buyers",
+          "sellers"
+        ],
+        "type": "object"
+      },
+      "market_nft_market_stats_extended": {
+        "properties": {
+          "addresses": {
+            "example": 5321,
+            "type": "integer"
+          },
+          "addressesPctChg": {
+            "example": -0.11,
+            "type": "number"
+          },
+          "buyers": {
+            "example": 3451,
+            "type": "integer"
+          },
+          "buyersPctChg": {
+            "example": 0.08,
+            "type": "number"
+          },
+          "sales": {
+            "example": 7832,
+            "type": "integer"
+          },
+          "salesPctChg": {
+            "example": 0.02,
+            "type": "number"
+          },
+          "sellers": {
+            "example": 3110,
+            "type": "integer"
+          },
+          "sellersPctChg": {
+            "example": -0.15,
+            "type": "number"
+          },
+          "volume": {
+            "example": 876345,
+            "type": "number"
+          },
+          "volumePctChg": {
+            "example": 0.08,
+            "type": "number"
+          }
+        },
+        "required": [
+          "volume",
+          "volumePctChg",
+          "sales",
+          "salesPctChg",
+          "addresses",
+          "addressesPctChg",
+          "buyers",
+          "buyersPctChg",
+          "sellers",
+          "sellersPctChg"
+        ],
+        "type": "object"
+      },
+      "market_nft_market_volume_trended": {
+        "items": {
+          "description": "Trended NFT market volume",
+          "properties": {
+            "time": {
+              "example": 1690171200,
+              "type": "integer"
+            },
+            "value": {
+              "example": 783125,
+              "type": "number"
+            }
+          },
+          "required": [
+            "time",
+            "value"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_marketplace_stats": {
+        "items": {
+          "description": "Marketplace stats",
+          "properties": {
+            "avgSale": {
+              "example": 100.5,
+              "type": "number"
+            },
+            "fees": {
+              "example": 41210.512,
+              "type": "number"
+            },
+            "liquidity": {
+              "example": 14341.1231,
+              "type": "number"
+            },
+            "listings": {
+              "example": 300,
+              "type": "integer"
+            },
+            "name": {
+              "example": "jpg.store",
+              "type": "string"
+            },
+            "royalties": {
+              "example": 645432.3123,
+              "type": "number"
+            },
+            "sales": {
+              "example": 7832,
+              "type": "integer"
+            },
+            "users": {
+              "example": 5321,
+              "type": "integer"
+            },
+            "volume": {
+              "example": 876345.312,
+              "type": "number"
+            }
+          },
+          "required": [
+            "name",
+            "volume",
+            "sales",
+            "avgSale",
+            "listings",
+            "users",
+            "fees",
+            "liquidity",
+            "royalties"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_top_timeframe": {
+        "items": {
+          "description": "NFT Rankings.",
+          "properties": {
+            "listings": {
+              "example": 15,
+              "type": "integer"
+            },
+            "logo": {
+              "example": "https://linktologo4.com",
+              "type": "string"
+            },
+            "marketCap": {
+              "example": 25000,
+              "type": "number"
+            },
+            "name": {
+              "example": "testCollection4",
+              "type": "string"
+            },
+            "policy": {
+              "example": "e3ff4ab89245ede61b3e2beab0443dbcc7ea8ca2c017478e4e8990e2",
+              "type": "string"
+            },
+            "price": {
+              "example": 500,
+              "type": "number"
+            },
+            "price24hChg": {
+              "example": 0.5,
+              "type": "number"
+            },
+            "price30dChg": {
+              "example": 0.7,
+              "type": "number"
+            },
+            "price7dChg": {
+              "example": 0.6,
+              "type": "number"
+            },
+            "rank": {
+              "example": 1,
+              "type": "integer"
+            },
+            "supply": {
+              "example": 50,
+              "type": "integer"
+            },
+            "volume24h": {
+              "example": 4000,
+              "type": "number"
+            },
+            "volume24hChg": {
+              "example": 0.11,
+              "type": "number"
+            },
+            "volume30d": {
+              "example": 6000,
+              "type": "number"
+            },
+            "volume30dChg": {
+              "example": 0.05,
+              "type": "number"
+            },
+            "volume7d": {
+              "example": 5000,
+              "type": "number"
+            },
+            "volume7dChg": {
+              "example": -0.11,
+              "type": "number"
+            }
+          },
+          "required": [
+            "rank",
+            "price24hChg",
+            "price7dChg",
+            "price30dChg",
+            "listings",
+            "logo",
+            "marketCap",
+            "name",
+            "policy",
+            "price",
+            "supply",
+            "volume24h",
+            "volume7d",
+            "volume30d",
+            "volume24hChg",
+            "volume7dChg",
+            "volume30dChg"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "market_nft_top_volume": {
+        "properties": {
+          "listings": {
+            "example": 583,
+            "type": "integer"
+          },
+          "logo": {
+            "example": "ipfs://QmZ3mjsA4YL58HZQ6pxhAp1EaibmTi15uzTNAmDekZDzNf",
+            "type": "string"
+          },
+          "name": {
+            "example": "Stag Alliance",
+            "type": "string"
+          },
+          "policy": {
+            "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+            "type": "string"
+          },
+          "price": {
+            "example": 175,
+            "type": "integer"
+          },
+          "sales": {
+            "example": 215,
+            "type": "integer"
+          },
+          "supply": {
+            "example": 7200,
+            "type": "integer"
+          },
+          "volume": {
+            "example": 49606,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "policy",
+          "name",
+          "logo",
+          "price",
+          "volume",
+          "listings",
+          "supply",
+          "sales"
+        ],
+        "type": "object"
+      },
+      "market_nft_top_volume_extended": {
+        "properties": {
+          "listings": {
+            "example": 583,
+            "type": "integer"
+          },
+          "listingsPctChg": {
+            "example": 0.11,
+            "type": "number"
+          },
+          "logo": {
+            "example": "ipfs://QmZ3mjsA4YL58HZQ6pxhAp1EaibmTi15uzTNAmDekZDzNf",
+            "type": "string"
+          },
+          "name": {
+            "example": "Stag Alliance",
+            "type": "string"
+          },
+          "owners": {
+            "example": 542,
+            "type": "integer"
+          },
+          "ownersPctChg": {
+            "example": -0.031,
+            "type": "number"
+          },
+          "policy": {
+            "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+            "type": "string"
+          },
+          "price": {
+            "example": 175,
+            "type": "integer"
+          },
+          "pricePctChg": {
+            "example": 0.024,
+            "type": "number"
+          },
+          "sales": {
+            "example": 50,
+            "type": "integer"
+          },
+          "salesPctChg": {
+            "example": 0.34,
+            "type": "number"
+          },
+          "supply": {
+            "example": 7200,
+            "type": "integer"
+          },
+          "volume": {
+            "example": 49606,
+            "type": "integer"
+          },
+          "volumePctChg": {
+            "example": 0.014,
+            "type": "number"
+          }
+        },
+        "required": [
+          "policy",
+          "name",
+          "logo",
+          "price",
+          "pricePctChg",
+          "volume",
+          "volumePctChg",
+          "listings",
+          "listingsPctChg",
+          "supply",
+          "sales",
+          "salesPctChg",
+          "holders",
+          "holdersPctChg"
+        ],
+        "type": "object"
+      },
+      "market_stats_response": {
+        "properties": {
+          "activeAddresses": {
+            "example": 24523,
+            "type": "integer"
+          },
+          "dexVolume": {
+            "example": 8134621.35,
+            "type": "float"
+          }
+        },
+        "type": "object"
+      },
+      "metrics": {
+        "items": {
+          "description": "Requests count",
+          "properties": {
+            "calls": {
+              "example": 4837,
+              "type": "integer"
+            },
+            "time": {
+              "example": 1692781200,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "time",
+            "calls"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "onchain_address_info": {
+        "properties": {
+          "address": {
+            "example": "addr1q9j5jqhqak5nmqphdqt4cj9kq0gppa49afyznggw03hjzhwxr0exydkt78th5wwrjphxh0h6rrgghzwxse6q3pdf9sxqkg2mmq",
+            "type": "string"
+          },
+          "assets": {
+            "items": {
+              "description": "Native asset balances",
+              "properties": {
+                "unit": {
+                  "example": "dda5fdb1002f7389b33e036b6afee82a8189becb6cba852e8b79b4fb0014df1047454e53",
+                  "type": "string"
+                },
+                "value": {
+                  "example": "12000000",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit",
+                "quantity"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "lovelace": {
+            "example": "45000000",
+            "type": "string"
+          },
+          "paymentCred": {
+            "example": "654902e0eda93d803768175c48b603d010f6a5ea4829a10e7c6f215d",
+            "type": "string"
+          },
+          "stakeAddress": {
+            "example": "stake1u8rphunzxm9lr4m688peqmnthmap35yt38rgvaqgsk5jcrqdr2vuc",
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "paymentCred",
+          "lovelace",
+          "assets"
+        ],
+        "type": "object"
+      },
+      "onchain_address_utxos": {
+        "items": {
+          "description": "UTxOs",
+          "properties": {
+            "assets": {
+              "items": {
+                "description": "Native asset balances",
+                "properties": {
+                  "quantity": {
+                    "example": "12000000",
+                    "type": "string"
+                  },
+                  "unit": {
+                    "example": "dda5fdb1002f7389b33e036b6afee82a8189becb6cba852e8b79b4fb0014df1047454e53",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "unit",
+                  "quantity"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "hash": {
+              "example": "a88d97638faf9fa63e4f4f8b4fd4664ae3505ae050bc48afde48f3c1e7b1e07b",
+              "type": "string"
+            },
+            "index": {
+              "example": 0,
+              "type": "integer"
+            },
+            "lovelace": {
+              "example": "3703342",
+              "type": "string"
+            }
+          },
+          "required": [
+            "hash",
+            "index",
+            "lovelace",
+            "assets"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "onchain_asset_supply": {
+        "properties": {
+          "supply": {
+            "example": 233838354,
+            "type": "number"
+          }
+        },
+        "required": [
+          "supply"
+        ],
+        "type": "object"
+      },
+      "onchain_transaction_utxos": {
+        "properties": {
+          "hash": {
+            "example": "8be33680ec04da1cc98868699c5462fbbf6975529fb6371669fa735d2972d69b",
+            "type": "string"
+          },
+          "inputs": {
+            "items": {
+              "description": "UTxOs",
+              "properties": {
+                "assets": {
+                  "items": {
+                    "description": "Native asset balances",
+                    "properties": {
+                      "quantity": {
+                        "example": "12000000",
+                        "type": "string"
+                      },
+                      "unit": {
+                        "example": "dda5fdb1002f7389b33e036b6afee82a8189becb6cba852e8b79b4fb0014df1047454e53",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "unit",
+                      "quantity"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "hash": {
+                  "example": "a88d97638faf9fa63e4f4f8b4fd4664ae3505ae050bc48afde48f3c1e7b1e07b",
+                  "type": "string"
+                },
+                "index": {
+                  "example": 0,
+                  "type": "integer"
+                },
+                "lovelace": {
+                  "example": "3703342",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hash",
+                "index",
+                "lovelace",
+                "assets"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "outputs": {
+            "items": {
+              "description": "UTxOs",
+              "properties": {
+                "assets": {
+                  "items": {
+                    "description": "Native asset balances",
+                    "properties": {
+                      "quantity": {
+                        "example": "12000000",
+                        "type": "string"
+                      },
+                      "unit": {
+                        "example": "dda5fdb1002f7389b33e036b6afee82a8189becb6cba852e8b79b4fb0014df1047454e53",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "unit",
+                      "quantity"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "hash": {
+                  "example": "a88d97638faf9fa63e4f4f8b4fd4664ae3505ae050bc48afde48f3c1e7b1e07b",
+                  "type": "string"
+                },
+                "index": {
+                  "example": 0,
+                  "type": "integer"
+                },
+                "lovelace": {
+                  "example": "3703342",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hash",
+                "index",
+                "lovelace",
+                "assets"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "hash",
+          "inputs",
+          "outputs"
+        ],
+        "type": "object"
+      },
+      "portfolio_positions_response": {
+        "properties": {
+          "adaBalance": {
+            "example": 10,
+            "type": "number"
+          },
+          "adaValue": {
+            "example": 10010,
+            "type": "number"
+          },
+          "liquidValue": {
+            "example": 10010,
+            "type": "number"
+          },
+          "numFTs": {
+            "example": 2,
+            "type": "integer"
+          },
+          "numNFTs": {
+            "example": 1,
+            "type": "integer"
+          },
+          "positionsFt": {
+            "items": {
+              "description": "Fungible token positions",
+              "properties": {
+                "24h": {
+                  "example": 0.11,
+                  "type": "number"
+                },
+                "30d": {
+                  "example": -0.32,
+                  "type": "number"
+                },
+                "7d": {
+                  "example": 0.03,
+                  "type": "number"
+                },
+                "adaValue": {
+                  "example": 10000,
+                  "type": "number"
+                },
+                "balance": {
+                  "example": 200,
+                  "type": "number"
+                },
+                "fingerprint": {
+                  "example": "fingerprint1",
+                  "type": "string"
+                },
+                "liquidBalance": {
+                  "example": 200,
+                  "type": "number"
+                },
+                "liquidValue": {
+                  "example": 10000,
+                  "type": "number"
+                },
+                "price": {
+                  "example": 100,
+                  "type": "number"
+                },
+                "ticker": {
+                  "example": "TEST1",
+                  "type": "string"
+                },
+                "unit": {
+                  "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ticker",
+                "balance",
+                "unit",
+                "fingerprint",
+                "price",
+                "adaValue",
+                "24h",
+                "7d",
+                "30d",
+                "liquidBalance",
+                "liquidValue"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "positionsLp": {
+            "items": {
+              "description": "LP tokens positions",
+              "properties": {
+                "adaValue": {
+                  "example": 400,
+                  "type": "number"
+                },
+                "amountLP": {
+                  "example": 100,
+                  "type": "number"
+                },
+                "exchange": {
+                  "example": "Minswap",
+                  "type": "string"
+                },
+                "ticker": {
+                  "example": "TEST2 / ADA LP",
+                  "type": "string"
+                },
+                "tokenA": {
+                  "example": "63bb8054f9142b46582198e280f489b3c928dfecb390b0cb39a5cbfe74657374746f6b656e32",
+                  "type": "string"
+                },
+                "tokenAAmount": {
+                  "example": 100,
+                  "type": "number"
+                },
+                "tokenAName": {
+                  "example": "TEST2",
+                  "type": "string"
+                },
+                "tokenB": {
+                  "type": "string"
+                },
+                "tokenBAmount": {
+                  "example": 200,
+                  "type": "number"
+                },
+                "tokenBName": {
+                  "example": "ADA",
+                  "type": "string"
+                },
+                "unit": {
+                  "example": "f22d56bc0daec9ff1e2d4d90061563517d279d3c998747d55234822874657374746f6b656e",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ticker",
+                "unit",
+                "amountLP",
+                "tokenA",
+                "tokenAName",
+                "tokenAAmount",
+                "tokenB",
+                "tokenBName",
+                "tokenBAmount",
+                "adaValue",
+                "exchange"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "positionsNft": {
+            "items": {
+              "description": "Non-fungible token positions",
+              "properties": {
+                "24h": {
+                  "example": 0.11,
+                  "type": "number"
+                },
+                "30d": {
+                  "example": -0.32,
+                  "type": "number"
+                },
+                "7d": {
+                  "example": 0.03,
+                  "type": "number"
+                },
+                "adaValue": {
+                  "example": 10000,
+                  "type": "number"
+                },
+                "balance": {
+                  "example": 2,
+                  "type": "integer"
+                },
+                "floorPrice": {
+                  "example": 1,
+                  "type": "number"
+                },
+                "liquidValue": {
+                  "example": 10,
+                  "type": "number"
+                },
+                "listings": {
+                  "example": 3,
+                  "type": "integer"
+                },
+                "name": {
+                  "example": "testCollection",
+                  "type": "string"
+                },
+                "policy": {
+                  "example": "4048d53202b57aec6eb8edd8e9e4196d8eeb9a5fe1dd50d6dfc67be3",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "policy",
+                "balance",
+                "adaValue",
+                "floorPrice",
+                "24h",
+                "7d",
+                "30d",
+                "listings",
+                "liquidValue"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "adaValue",
+          "adaBalance",
+          "numFTs",
+          "numNFTs",
+          "liquidValue",
+          "positionsFt",
+          "positionsNft",
+          "positionsLp"
+        ],
+        "type": "object"
+      },
+      "portfolio_value_trended_response": {
+        "items": {
+          "description": "Interval value",
+          "properties": {
+            "time": {
+              "example": 1692781200,
+              "type": "integer"
+            },
+            "value": {
+              "example": 57,
+              "type": "number"
+            }
+          },
+          "required": [
+            "time",
+            "value"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_debt_loans_response": {
+        "items": {
+          "description": "Active P2P Loan",
+          "properties": {
+            "collateralAmount": {
+              "example": 120.131,
+              "type": "number"
+            },
+            "collateralToken": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            },
+            "collateralValue": {
+              "example": 84.466,
+              "type": "number"
+            },
+            "debtAmount": {
+              "example": 100,
+              "type": "number"
+            },
+            "debtToken": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            },
+            "debtValue": {
+              "example": 70.3123,
+              "type": "number"
+            },
+            "expiration": {
+              "example": 1722995180,
+              "type": "integer"
+            },
+            "hash": {
+              "example": "0002464b78a10d0a0dc6345666764caf519befa28d2ccb2efc711376320d54ef",
+              "type": "string"
+            },
+            "health": {
+              "example": 1.172,
+              "type": "number"
+            },
+            "interestAmount": {
+              "example": 2.131,
+              "type": "number"
+            },
+            "interestToken": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            },
+            "interestValue": {
+              "example": 1.75,
+              "type": "number"
+            },
+            "protocol": {
+              "example": "Levvy",
+              "type": "string"
+            },
+            "time": {
+              "example": 1721908780,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "time",
+            "expiration",
+            "hash",
+            "protocol",
+            "interestToken",
+            "debtToken",
+            "collateralToken",
+            "interestAmount",
+            "debtAmount",
+            "collateralAmount",
+            "interestValue",
+            "debtValue",
+            "collateralValue",
+            "health"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_debt_offers_response": {
+        "items": {
+          "description": "Active P2P Offer",
+          "properties": {
+            "collateralAmount": {
+              "example": 120.131,
+              "type": "number"
+            },
+            "collateralToken": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            },
+            "collateralValue": {
+              "example": 84.466,
+              "type": "number"
+            },
+            "debtAmount": {
+              "example": 100,
+              "type": "number"
+            },
+            "debtToken": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            },
+            "debtValue": {
+              "example": 70.3123,
+              "type": "number"
+            },
+            "duration": {
+              "example": 1209600,
+              "type": "integer"
+            },
+            "hash": {
+              "example": "0002464b78a10d0a0dc6345666764caf519befa28d2ccb2efc711376320d54ef",
+              "type": "string"
+            },
+            "health": {
+              "example": 1.172,
+              "type": "number"
+            },
+            "interestAmount": {
+              "example": 2.131,
+              "type": "number"
+            },
+            "interestToken": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            },
+            "interestValue": {
+              "example": 1.75,
+              "type": "number"
+            },
+            "protocol": {
+              "example": "Levvy",
+              "type": "string"
+            },
+            "time": {
+              "example": 1692781200,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "time",
+            "duration",
+            "hash",
+            "protocol",
+            "interestToken",
+            "debtToken",
+            "collateralToken",
+            "interestAmount",
+            "debtAmount",
+            "collateralAmount",
+            "interestValue",
+            "debtValue",
+            "collateralValue",
+            "health"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_holders_response": {
+        "properties": {
+          "holders": {
+            "example": 1024,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "token_holders_top_response": {
+        "items": {
+          "description": "Token holder",
+          "properties": {
+            "address": {
+              "example": "stake1uyqj8nukxpcal7h6zdjr958wfk5yhqcns2ard8c7appyd0gt06k67",
+              "type": "string"
+            },
+            "amount": {
+              "example": 13432.34,
+              "type": "number"
+            }
+          },
+          "required": [
+            "address",
+            "amount"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_indicators_response": {
+        "items": {
+          "description": "Token indicator data",
+          "example": 2.33521,
+          "type": "integer"
+        },
+        "type": "array"
+      },
+      "token_links_response": {
+        "properties": {
+          "description": {
+            "example": "LENFI is a utility token integral to a decentralized lending and borrowing protocol on the Cardano blockchain",
+            "type": "string"
+          },
+          "discord": {
+            "example": "https://discord.gg/lenfi",
+            "type": "string"
+          },
+          "email": {
+            "example": "project@gmail.com",
+            "type": "string"
+          },
+          "facebook": {
+            "example": "https://www.facebook.com/WorldMobileTeam/",
+            "type": "string"
+          },
+          "github": {
+            "example": "https://github.com/lenfiLabs",
+            "type": "string"
+          },
+          "instagram": {
+            "example": "https://www.instagram.com/WorldMobileTeam/",
+            "type": "string"
+          },
+          "medium": {
+            "type": "string"
+          },
+          "reddit": {
+            "example": "https://www.reddit.com/r/worldmobile/",
+            "type": "string"
+          },
+          "telegram": {
+            "example": "http://t.me/lenfi",
+            "type": "string"
+          },
+          "twitter": {
+            "example": "https://twitter.com/LenfiOfficial",
+            "type": "string"
+          },
+          "website": {
+            "example": "https://lenfi.io",
+            "type": "string"
+          },
+          "youtube": {
+            "example": "https://www.youtube.com/@WorldMobileTeam",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "token_market_trades_response": {
+        "items": {
+          "description": "Token trades",
+          "properties": {
+            "action": {
+              "example": "buy",
+              "type": "string"
+            },
+            "address": {
+              "example": "addr1q9j5jqhqak5nmqphdqt4cj9kq0gppa49afyznggw03hjzhwxr0exydkt78th5wwrjphxh0h6rrgghzwxse6q3pdf9sxqkg2mmq",
+              "type": "string"
+            },
+            "exchange": {
+              "example": "Minswap",
+              "type": "string"
+            },
+            "hash": {
+              "example": "8df1c6f66c0d02153f604ea588e792582908d3299ef6d322ae0448001791a24f",
+              "type": "string"
+            },
+            "lpTokenUnit": {
+              "example": "f5808c2c990d86da54bfc97d89cee6efa20cd8461616359478d96b4c35e27e3c7b4bef4824e5a4989a97e017fb8a1156d9823c20821e4d2f1fa168e4",
+              "type": "string"
+            },
+            "price": {
+              "example": 100,
+              "type": "number"
+            },
+            "time": {
+              "example": 1692781200,
+              "type": "integer"
+            },
+            "tokenA": {
+              "example": "63bb8054f9142b46582198e280f489b3c928dfecb390b0cb39a5cbfe74657374746f6b656e32",
+              "type": "string"
+            },
+            "tokenAAmount": {
+              "example": 100,
+              "type": "number"
+            },
+            "tokenAName": {
+              "example": "TEST2",
+              "type": "string"
+            },
+            "tokenB": {
+              "type": "string"
+            },
+            "tokenBAmount": {
+              "example": 200,
+              "type": "number"
+            },
+            "tokenBName": {
+              "example": "ADA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tokenA",
+            "tokenAName",
+            "tokenB",
+            "tokenBName",
+            "tokenAAmount",
+            "tokenBAmount",
+            "action",
+            "time",
+            "exchange",
+            "address",
+            "price",
+            "hash",
+            "lpTokenUnit"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_mcap_response": {
+        "properties": {
+          "circSupply": {
+            "example": 1036194689.027126,
+            "type": "number"
+          },
+          "fdv": {
+            "example": 184018358.12,
+            "type": "number"
+          },
+          "mcap": {
+            "example": 63559615.43,
+            "type": "number"
+          },
+          "price": {
+            "example": 0.0613,
+            "type": "number"
+          },
+          "ticker": {
+            "example": "MIN",
+            "type": "string"
+          },
+          "totalSupply": {
+            "example": 3000000000.0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "ticker",
+          "circSupply",
+          "totalSupply",
+          "price",
+          "mcap",
+          "fdv"
+        ],
+        "type": "object"
+      },
+      "token_ohlcv_response": {
+        "items": {
+          "description": "Token ohlcv data",
+          "properties": {
+            "close": {
+              "example": 1.33,
+              "type": "number"
+            },
+            "high": {
+              "example": 1.38,
+              "type": "number"
+            },
+            "low": {
+              "example": 1.33,
+              "type": "number"
+            },
+            "open": {
+              "example": 1.34,
+              "type": "number"
+            },
+            "time": {
+              "example": 1692738000,
+              "type": "integer"
+            },
+            "volume": {
+              "example": 103432.3324,
+              "type": "number"
+            }
+          },
+          "required": [
+            "time",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_pools_response": {
+        "items": {
+          "description": "Pool info",
+          "properties": {
+            "exchange": {
+              "example": "Minswap",
+              "type": "string"
+            },
+            "lpTokenUnit": {
+              "example": "e4214b7cce62ac6fbba385d164df48e157eae5863521b4b67ca71d8639b9b709ac8605fc82116a2efc308181ba297c11950f0f350001e28f0e50868b",
+              "type": "string"
+            },
+            "onchainID": {
+              "example": "0be55d262b29f564998ff81efe21bdc0022621c12f15af08d0f2ddb1.39b9b709ac8605fc82116a2efc308181ba297c11950f0f350001e28f0e50868b",
+              "type": "string"
+            },
+            "tokenA": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            },
+            "tokenALocked": {
+              "example": 522963.34,
+              "type": "number"
+            },
+            "tokenATicker": {
+              "example": "LENFI",
+              "type": "string"
+            },
+            "tokenB": {
+              "example": "{empty for ADA}",
+              "type": "string"
+            },
+            "tokenBLocked": {
+              "example": 4393379.12,
+              "type": "number"
+            },
+            "tokenBTicker": {
+              "example": "ADA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tokenA",
+            "tokenATicker",
+            "tokenB",
+            "tokenBTicker",
+            "lpTokenUnit",
+            "onchainID",
+            "tokenALocked",
+            "tokenBLocked",
+            "exchange"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_prices_body": {
+        "items": {
+          "example": "dda5fdb1002f7389b33e036b6afee82a8189becb6cba852e8b79b4fb0014df1047454e53",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "token_prices_chg_response": {
+        "properties": {
+          "1h": {
+            "example": 0.007,
+            "type": "number"
+          },
+          "4h": {
+            "example": -0.061,
+            "type": "number"
+          },
+          "5m": {
+            "example": 0.024,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "token_prices_response": {
+        "properties": {
+          "dda5fdb1002f7389b33e036b6afee82a8189becb6cba852e8b79b4fb0014df1047454e53": {
+            "example": 5.0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "unit",
+          "price"
+        ],
+        "type": "object"
+      },
+      "token_quote_available_response": {
+        "items": {
+          "example": "USD",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "token_quote_response": {
+        "properties": {
+          "price": {
+            "example": 0.61,
+            "type": "number"
+          }
+        },
+        "required": [
+          "price"
+        ],
+        "type": "object"
+      },
+      "token_top_liquidity_response": {
+        "items": {
+          "description": "Top liquidity tokens",
+          "properties": {
+            "liquidity": {
+              "example": 504421.3324,
+              "type": "number"
+            },
+            "price": {
+              "example": 0.537,
+              "type": "number"
+            },
+            "ticker": {
+              "example": "AGIX",
+              "type": "string"
+            },
+            "unit": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            }
+          },
+          "required": [
+            "unit",
+            "ticker",
+            "price",
+            "liquidity"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_top_mcap_response": {
+        "items": {
+          "description": "Top market cap tokens",
+          "properties": {
+            "circSupply": {
+              "example": 1252742236.022414,
+              "type": "number"
+            },
+            "fdv": {
+              "example": 1074222392.55,
+              "type": "number"
+            },
+            "mcap": {
+              "example": 689889366.5,
+              "type": "number"
+            },
+            "price": {
+              "example": 0.537,
+              "type": "number"
+            },
+            "ticker": {
+              "example": "AGIX",
+              "type": "string"
+            },
+            "totalSupply": {
+              "example": 1374050373.74311,
+              "type": "number"
+            },
+            "unit": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            }
+          },
+          "required": [
+            "unit",
+            "ticker",
+            "price",
+            "mcap",
+            "fdv",
+            "circSupply",
+            "totalSupply"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_top_volume_response": {
+        "items": {
+          "description": "Top volume tokens",
+          "properties": {
+            "price": {
+              "example": 0.537,
+              "type": "number"
+            },
+            "ticker": {
+              "example": "AGIX",
+              "type": "string"
+            },
+            "unit": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            },
+            "volume": {
+              "example": 103432.3324,
+              "type": "number"
+            }
+          },
+          "required": [
+            "unit",
+            "ticker",
+            "price",
+            "volume"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "token_trading_stats_response": {
+        "properties": {
+          "buyVolume": {
+            "example": 234123.342,
+            "type": "number"
+          },
+          "buyers": {
+            "example": 134,
+            "type": "integer"
+          },
+          "buys": {
+            "example": 189,
+            "type": "integer"
+          },
+          "sellVolume": {
+            "example": 187432.654,
+            "type": "number"
+          },
+          "sellers": {
+            "example": 89,
+            "type": "integer"
+          },
+          "sells": {
+            "example": 92,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "buyers",
+          "sellers",
+          "buyVolume",
+          "sellVolume",
+          "buys",
+          "sells"
+        ],
+        "type": "object"
+      },
+      "wallet_trades_tokens_response": {
+        "items": {
+          "description": "Wallet trades",
+          "properties": {
+            "action": {
+              "example": "Buy",
+              "type": "string"
+            },
+            "hash": {
+              "example": "505cb5a55f7bbe0ed70e58d97b105220ea662fb91bbd89e915ca85f07500a9b9",
+              "type": "string"
+            },
+            "time": {
+              "example": 1692781200,
+              "type": "integer"
+            },
+            "tokenA": {
+              "example": "63bb8054f9142b46582198e280f489b3c928dfecb390b0cb39a5cbfe74657374746f6b656e32",
+              "type": "string"
+            },
+            "tokenAAmount": {
+              "example": 10,
+              "type": "number"
+            },
+            "tokenAName": {
+              "example": "TEST1",
+              "type": "string"
+            },
+            "tokenB": {
+              "type": "string"
+            },
+            "tokenBAmount": {
+              "example": 5,
+              "type": "number"
+            },
+            "tokenBName": {
+              "example": "ADA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "time",
+            "tokenA",
+            "tokenAName",
+            "tokenAAmount",
+            "tokenB",
+            "tokenBName",
+            "tokenBAmount"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      }
+    },
+    "securitySchemes": {
+      "ApiAuthKey": {
+        "description": "Contact TapTools to get an API key",
+        "in": "header",
+        "name": "x-api-key",
+        "type": "apiKey"
+      }
+    }
+  },
+  "info": {
+    "contact": {
+      "email": "support@taptools.io",
+      "name": "API Support",
+      "url": "https://taptools.io"
+    },
+    "description": "TapTools is a data provider that offers onchain data for assets on the Cardano network.\n\n# Introduction\nThis API includes many of the same endpoints that power the [TapTools website](https://taptools.io).\nWe have indexed onchain market data for both fungible and non-fungible tokens, as well as\nincluded endpoints to query raw onchain data.\n\n# Rate Limiting\nThis API implements rate limiting to ensure resources aren't overwhelmed. This rate limit varies by plan.\n",
+    "termsOfService\"": "https://taptools.io/terms",
+    "title": "TapTools - API Documentation",
+    "version": "2.0.5",
+    "x-logo": {
+      "altText": "TapTools",
+      "url": "https://taptools-public.s3.amazonaws.com/images/taptools-name.png"
+    }
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/address/info": {
+      "get": {
+        "description": "Get address payment credential and stake address, along with its current aggregate lovelace and multi asset balance. Either `address` or `paymentCred` can be provided, but one must be provided.",
+        "parameters": [
+          {
+            "description": "Address to query for",
+            "in": "query",
+            "name": "address",
+            "required": false,
+            "schema": {
+              "example": "addr1q9j5jqhqak5nmqphdqt4cj9kq0gppa49afyznggw03hjzhwxr0exydkt78th5wwrjphxh0h6rrgghzwxse6q3pdf9sxqkg2mmq",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Payment credential to query for",
+            "in": "query",
+            "name": "paymentCred",
+            "required": false,
+            "schema": {
+              "example": "654902e0eda93d803768175c48b603d010f6a5ea4829a10e7c6f215d",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/onchain_address_info"
+                }
+              }
+            },
+            "description": "Address info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Address info",
+        "tags": [
+          "Onchain \u00bb Address"
+        ]
+      }
+    },
+    "/address/utxos": {
+      "get": {
+        "description": "Get current UTxOs at an address/payment credential. Either `address` or `paymentCred` can be provided, but one must be provided.",
+        "parameters": [
+          {
+            "description": "Address to query for",
+            "in": "query",
+            "name": "address",
+            "required": false,
+            "schema": {
+              "example": "addr1q9j5jqhqak5nmqphdqt4cj9kq0gppa49afyznggw03hjzhwxr0exydkt78th5wwrjphxh0h6rrgghzwxse6q3pdf9sxqkg2mmq",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Payment credential to query for",
+            "in": "query",
+            "name": "paymentCred",
+            "required": false,
+            "schema": {
+              "example": "654902e0eda93d803768175c48b603d010f6a5ea4829a10e7c6f215d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `100`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/onchain_address_utxos"
+                }
+              }
+            },
+            "description": "Address UTxOs"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Address UTxOs",
+        "tags": [
+          "Onchain \u00bb Address"
+        ]
+      }
+    },
+    "/asset/supply": {
+      "get": {
+        "description": "Get onchain supply for a token.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name) to filter by",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/onchain_asset_supply"
+                }
+              }
+            },
+            "description": "Asset supply"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Asset supply",
+        "tags": [
+          "Onchain \u00bb Asset"
+        ]
+      }
+    },
+    "/integration/asset": {
+      "get": {
+        "description": "Returns details of a given token by its address.",
+        "parameters": [
+          {
+            "description": "Token ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "example": "b46b12f0a61721a0358988f806a7c1562e1e622d5886a73194051f336d6131",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/integration_asset"
+                }
+              }
+            },
+            "description": "Token info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token by ID",
+        "tags": [
+          "Integration"
+        ]
+      }
+    },
+    "/integration/block": {
+      "get": {
+        "description": "Returns a specific block using either the number of the block or its timestamp.",
+        "parameters": [
+          {
+            "description": "Block number",
+            "in": "query",
+            "name": "number",
+            "required": false,
+            "schema": {
+              "example": 10937538,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Block timestamp",
+            "in": "query",
+            "name": "timestamp",
+            "required": false,
+            "schema": {
+              "example": 1728408176,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/integration_block"
+                }
+              }
+            },
+            "description": "Block info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Block",
+        "tags": [
+          "Integration"
+        ]
+      }
+    },
+    "/integration/events": {
+      "get": {
+        "description": "List of events occured in a range of blocks.",
+        "parameters": [
+          {
+            "description": "Block number to start filtering at (inclusive).",
+            "in": "query",
+            "name": "fromBlock",
+            "required": true,
+            "schema": {
+              "example": 10937538,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Block number to end filtering at (inclusive).",
+            "in": "query",
+            "name": "toBlock",
+            "required": true,
+            "schema": {
+              "example": 10937542,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Limit results to a maximum count, Defaults to `1000`, With a maximum of `1000`.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "example": 1000,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/integration_events"
+                }
+              }
+            },
+            "description": "Events info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Events",
+        "tags": [
+          "Integration"
+        ]
+      }
+    },
+    "/integration/exchange": {
+      "get": {
+        "description": "Return details of a given DEX by its factory address or alternative id.",
+        "parameters": [
+          {
+            "description": "Exchange id",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "example": "7",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/integration_exchange"
+                }
+              }
+            },
+            "description": "Exchange info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "DEX",
+        "tags": [
+          "Integration"
+        ]
+      }
+    },
+    "/integration/latest-block": {
+      "get": {
+        "description": "Returns the latest block processed in the blockchain/DEX.",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/integration_latest_block"
+                }
+              }
+            },
+            "description": "Block info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Latest block",
+        "tags": [
+          "Integration"
+        ]
+      }
+    },
+    "/integration/pair": {
+      "get": {
+        "description": "Returns pair details (aka pool) by its address.",
+        "parameters": [
+          {
+            "description": "Pair ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "example": "nikeswaporderbook.44759dc63605dbf88700b241ee451aa5b0334cf2b34094d836fbdf8642757a7a696542656520.ada",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/integration_pair"
+                }
+              }
+            },
+            "description": "Pair info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Pair by ID",
+        "tags": [
+          "Integration"
+        ]
+      }
+    },
+    "/market/stats": {
+      "get": {
+        "description": "Get aggregated market stats, including 24h DEX volume and total active addresses onchain. Active addresses are addresses that have either sent or received any transactions within the last 24 hours. Multiple addresses with the same stake key will be counted as one address.",
+        "parameters": [
+          {
+            "description": "Quote currency to use (ADA, USD, EUR, ETH, BTC). Default is `ADA`.",
+            "in": "query",
+            "name": "quote",
+            "required": false,
+            "schema": {
+              "example": "ADA",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_stats_response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Market stats",
+        "tags": [
+          "Market"
+        ]
+      }
+    },
+    "/metrics": {
+      "get": {
+        "description": "Get the number of requests made by day over the last 30d.",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/metrics"
+                }
+              }
+            },
+            "description": "Number of requests"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Number of requests",
+        "tags": [
+          "Metrics"
+        ]
+      }
+    },
+    "/nft/asset/sales": {
+      "get": {
+        "description": "Get a specific asset's sale history.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The name of a specific NFT to get stats for.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "example": "ClayNation3725",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_asset_sales"
+                }
+              }
+            },
+            "description": "NFT Sale History."
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT sale history",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/asset/stats": {
+      "get": {
+        "description": "Get high-level stats on a certain NFT asset.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The name of a specific NFT to get stats for.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "example": "ClayNation3725",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_asset_stats"
+                }
+              }
+            },
+            "description": "NFT stats"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT stats",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/asset/traits": {
+      "get": {
+        "description": "Get a specific NFT's traits and trait prices.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The name of a specific NFT to get stats for.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "example": "ClayNation3725",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Include trait prices or not, Options are `0`, `1`. Default is `1`.",
+            "in": "query",
+            "name": "prices",
+            "required": false,
+            "schema": {
+              "example": 0,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_asset_traits"
+                }
+              }
+            },
+            "description": "NFT traits."
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT traits",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/assets": {
+      "get": {
+        "description": "Get all NFTs from a collection with the ability to sort by price/rank and filter to specific traits.\nCategories and traits can be searched for by adding query params ex:(`policy=abc&hair=white,black&background=red`),\nyou can have any combination of categories and traits ex:(`policy=abc&hair=blonde&background=blue`)\n",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "What should the results be sorted by. Options are `price` and `rank`. Default is `price`.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "schema": {
+              "example": "price",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Which direction should the results be sorted. Options are `asc`, `desc`. Default is `asc`",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "example": "asc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Search for a certain NFT's name, default is `null`.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "schema": {
+              "example": "ClayNation3725",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Return only nfts that are on sale Options are `0`, `1`. Default is `0`.",
+            "in": "query",
+            "name": "onSale",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `100`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_assets"
+                }
+              }
+            },
+            "description": "Collection assets."
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Collection assets",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/holders/distribution": {
+      "get": {
+        "description": "Get the distribution of NFTs within a collection by bucketing into number of NFTs held groups. This counts someone who has an asset listed on a marketplace as an owner, as well as someone who is staking their NFT to a supported smart contract.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_holders_distribution"
+                }
+              }
+            },
+            "description": "Collection holder distribution"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Holder distribution",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/holders/top": {
+      "get": {
+        "description": "Get the top holders for a particular NFT collection. This counts someone who has an asset listed on a marketplace as an owner, as well as someone who is staking their NFT to a supported smart contract.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `10`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 10,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Whether or not to exclude marketplace addresses (0, 1)",
+            "in": "query",
+            "name": "excludeExchanges",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_holders_top"
+                }
+              }
+            },
+            "description": "Collection top holders"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Top holders",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/holders/trended": {
+      "get": {
+        "description": "Get holders trended by day for a particular NFT collection. This counts someone who has an asset listed on a marketplace as an owner, as well as someone who is staking their NFT to a supported smart contract.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `7d`, `30d`, `90d`, `180d`, `1y` and `all`. Defaults to `30d`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "30d",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_holders_trended"
+                }
+              }
+            },
+            "description": "Collection trended holders"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Trended holders",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/info": {
+      "get": {
+        "description": "Get basic information about a collection like name, socials, and logo.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_info"
+                }
+              }
+            },
+            "description": "Collection info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Collection info",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/listings": {
+      "get": {
+        "description": "Get the amount of active listings along with total supply for a particular collection.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_listings"
+                }
+              }
+            },
+            "description": "Current active listings"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Number of active listings",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/listings/depth": {
+      "get": {
+        "description": "Get cumulative amount of listings at each price point, starting at the floor and moving upwards.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Specify how many items to return. Maximum is `1000`, default is `500`.",
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "schema": {
+              "example": 600,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_listings_depth"
+                }
+              }
+            },
+            "description": "NFT collection listings depth"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT listings depth",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/listings/individual": {
+      "get": {
+        "description": "Get a list of active listings with supporting information. This endpoint supports pagination and sorting by price and time listed.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "What should the results be sorted by. Options are `price`, `time`. Default is `price`.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "schema": {
+              "example": "price",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Which direction should the results be sorted. Options are `asc`, `desc`. Default is `asc`",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "example": "asc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `100`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_listings_individual"
+                }
+              }
+            },
+            "description": "NFT collection listings"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Get list of active listings",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/listings/trended": {
+      "get": {
+        "description": "Get trended number of listings and floor price for a particular NFT collection.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `12h`, `1d`, `3d`, `1w`, `1M`.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "schema": {
+              "example": "1d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The number of intervals to return, e.g. if you want 180 days of data in 1d intervals, then pass `180` here. Leave blank for full history.",
+            "in": "query",
+            "name": "numIntervals",
+            "required": false,
+            "schema": {
+              "example": 180,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_listings_trended"
+                }
+              }
+            },
+            "description": "NFT collection trended listings"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT listings trended",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/ohlcv": {
+      "get": {
+        "description": "Get OHLCV (open, high, low, close, volume) of floor price for a particular NFT collection. If you don't plan to format with candlesticks, you can use the `close` value from each interval and create a simple line chart. `time` is the start time of the interval, as a UNIX timestamp.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `12h`, `1d`, `3d`, `1w`, `1M`.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "schema": {
+              "example": "1d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The number of intervals to return, e.g. if you want 180 days of data in 1d intervals, then pass `180` here.",
+            "in": "query",
+            "name": "numIntervals",
+            "required": false,
+            "schema": {
+              "example": 180,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Quote currency to use, e.g. `USD`, `EUR`, `ADA`. Defaults to `ADA`. Check `/token/quote/available` for available options.",
+            "in": "query",
+            "name": "quote",
+            "required": false,
+            "schema": {
+              "example": "ada",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_ohlcv"
+                }
+              }
+            },
+            "description": "NFT collection OHLCV"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT floor price OHLCV",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/stats": {
+      "get": {
+        "description": "Get basic information about a collection like floor price, volume, and supply. Volume returned is lifetime volume. Use `/nft/collection/trades/stats` for different timeframes and more information about trading volume.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_stats"
+                }
+              }
+            },
+            "description": "Collection stats"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Collection stats",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/stats/extended": {
+      "get": {
+        "description": "Get basic information about a collection like floor price, volume, and supply. Volume returned is lifetime volume.\n`pctChg` values are the percentage difference between current values and value up until timeframe. This returns the\nsame data as `nft/collection/stats`, but with percent changes included.\n",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `24h`, `7d`, `30d`. Defaults to `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "24h",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_stats_extended"
+                }
+              }
+            },
+            "description": "NFT collection extended stats"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Collection stats (extended)",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/trades": {
+      "get": {
+        "description": "Get individual trades for a particular collection or for the entire NFT market by not specifying a policy ID.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": false,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `1h`, `4h`, `24h`, `7d`, `30d`, `90d`, `180d`, `1y`, `all`. Defaults to `30d`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "30d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "What should the results be sorted by. Options are `amount`, `time`. Default is `time`.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "schema": {
+              "example": "time",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Which direction should the results be sorted. Options are `asc`, `desc`. Default is `desc`.",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "example": "desc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter to only trades of a certain ADA amount.",
+            "in": "query",
+            "name": "minAmount",
+            "required": false,
+            "schema": {
+              "example": 1000,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter trades using a UNIX timestamp, will only return trades after this timestamp.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "example": 1704759422,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `100`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_trades"
+                }
+              }
+            },
+            "description": "Individual trades"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Trades",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/trades/stats": {
+      "get": {
+        "description": "Get trading stats like volume and number of sales for a particular collection.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "What timeframe to include in volume aggregation. Options are `15m`, `1h`, `4h`, `12h`, `24h`, `7d`, `30d`, `90d`, `180d`, `1y`, `all`. Defaults to `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "24h",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_trades_stats"
+                }
+              }
+            },
+            "description": "Amount of trading volume"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Trading stats",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/traits/price": {
+      "get": {
+        "description": "Get a list of traits within a collection and each trait's floor price. This allows you to see which traits are higher/lower priced.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The name of a specific NFT to get trait prices for.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "example": "ClayNation3725",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_traits_price"
+                }
+              }
+            },
+            "description": "Collection trait prices"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Collection trait prices",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/traits/rarity": {
+      "get": {
+        "description": "Get every metadata attribute and how likely it is to occur within the NFT collection.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_rarity"
+                }
+              }
+            },
+            "description": "Collection metadata rarity"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Collection metadata rarity",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/traits/rarity/rank": {
+      "get": {
+        "description": "Get rank of NFT's rarity within a collection",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "40fa2aa67258b4ce7b5782f74831d46a84c59a0ff0c28262fab21728",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The name of the NFT",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "example": "ClayNation3725",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_rarity_rank"
+                }
+              }
+            },
+            "description": "NFT rarity rank"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT rarity rank",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/collection/volume/trended": {
+      "get": {
+        "description": "Get trended volume and number of sales for a particular NFT collection.",
+        "parameters": [
+          {
+            "description": "The policy ID for the collection.",
+            "in": "query",
+            "name": "policy",
+            "required": true,
+            "schema": {
+              "example": "1fcf4baf8e7465504e115dcea4db6da1f7bed335f2a672e44ec3f94e",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `12h`, `1d`, `3d`, `1w`, `1M`.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "schema": {
+              "example": "1d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The number of intervals to return, e.g. if you want 180 days of data in 1d intervals, then pass `180` here. Leave blank for full history.",
+            "in": "query",
+            "name": "numIntervals",
+            "required": false,
+            "schema": {
+              "example": 180,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_collection_volume_trended"
+                }
+              }
+            },
+            "description": "NFT collection trended volume"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT volume trended",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/market/stats": {
+      "get": {
+        "description": "Get high-level market stats across the entire NFT market. `addresses` is the count of stake keys that have purchased or sold an NFT within the given timeframe. If an address does not have a stake key, it is still counted as a distinct address.",
+        "parameters": [
+          {
+            "description": "The time interval. Options are `1h`, `4h`, `24h`, `7d`, `30d`, `all`. Defaults to `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": true,
+            "schema": {
+              "example": "1d",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_market_stats"
+                }
+              }
+            },
+            "description": "NFT market stats"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Market-wide NFT stats",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/market/stats/extended": {
+      "get": {
+        "description": "Get high-level market stats across the entire NFT market. `addresses` is the count of stake keys that have purchased or sold an NFT within the given timeframe. If an address does not have a stake key, it is still counted as a distinct address.",
+        "parameters": [
+          {
+            "description": "The time interval. Options are `1h`, `4h`, `24h`, `7d`, `30d`, `all`. Defaults to `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": true,
+            "schema": {
+              "example": "1d",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_market_stats_extended"
+                }
+              }
+            },
+            "description": "NFT market stats"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Market-wide NFT stats (extended)",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/market/volume/trended": {
+      "get": {
+        "description": "Get trended volume for entire NFT market.",
+        "parameters": [
+          {
+            "description": "The time interval. Options are `7d`, `30d`, `90d`, `180d`, `1y`, `all`. Defaults to `30d`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": true,
+            "schema": {
+              "example": "30d",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_market_volume_trended"
+                }
+              }
+            },
+            "description": "NFT market volume trended"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT market volume",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/marketplace/stats": {
+      "get": {
+        "description": "Get high-level NFT marketplace stats.",
+        "parameters": [
+          {
+            "description": "The time interval. Options are `24h`, `7d`, `30d`, `90d`, `180d`, `all`. Defaults to `7d`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "30d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filters data to a certain marketplace by name.",
+            "in": "query",
+            "name": "marketplace",
+            "required": false,
+            "schema": {
+              "example": "jpg.store",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filters to only count data that occured between yesterday 00:00UTC and today 00:00UTC `(0,1)`.",
+            "in": "query",
+            "name": "lastDay",
+            "required": false,
+            "schema": {
+              "example": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_marketplace_stats"
+                }
+              }
+            },
+            "description": "NFT marketplace stats"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT Marketplace stats",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/top/timeframe": {
+      "get": {
+        "description": "Get top NFT rankings based on total market cap, 24 hour volume or 24 hour top price gainers/losers.",
+        "parameters": [
+          {
+            "description": "Criteria to rank NFT Collections based on. Options are `marketCap`, `volume`, `gainers`, `losers`.",
+            "in": "query",
+            "name": "ranking",
+            "required": true,
+            "schema": {
+              "example": "marketCap",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Specify how many items to return. Maximum is `100`, default is `25`.",
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "schema": {
+              "example": 50,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_top_timeframe"
+                }
+              }
+            },
+            "description": "NFT Top Rankings."
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "406": {
+            "$ref": "#/components/responses/406"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "NFT top rankings",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/top/volume": {
+      "get": {
+        "description": "Get top NFT collections by trading volume over a given timeframe.",
+        "parameters": [
+          {
+            "description": "What timeframe to include in volume aggregation. Options are `1h`, `4h`, `24h`, `7d`, `30d`, `all`. Defaults to `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "24h",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `10`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 10,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_top_volume"
+                }
+              }
+            },
+            "description": "Top NFT collections by volume"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Top volume collections",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/nft/top/volume/extended": {
+      "get": {
+        "description": "Get top NFT collections by trading volume over a given timeframe.\n`pctChg` values are the percentage difference between current values and values up until the given `timeframe`.\n",
+        "parameters": [
+          {
+            "description": "What timeframe to include in volume aggregation. Options are `1h`, `4h`, `24h`, `7d`, `30d`, `all`. Defaults to `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "24h",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `10`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 10,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market_nft_top_volume_extended"
+                }
+              }
+            },
+            "description": "Top NFT collections by volume"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Top volume collections (extended)",
+        "tags": [
+          "Market \u00bb NFTs"
+        ]
+      }
+    },
+    "/token/debt/loans": {
+      "get": {
+        "description": "Get active P2P loans of a certain token (Currently only supports P2P protocols like Lenfi and Levvy).",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name) to filter by",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Comma seperated value enabling you to filter to loans where token is used as `collateral`, `debt`, `interest` or a mix of them, default is `collateral,debt` filtering to loans where token is used as collateral OR debt.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "schema": {
+              "example": "collateral,debt",
+              "type": "string"
+            }
+          },
+          {
+            "description": "What should the results be sorted by. Options are `time`, `expiration`. Default is `time`. `expiration` is expiration date of loan.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "schema": {
+              "example": "time",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Which direction should the results be sorted. Options are `asc`, `desc`. Default is `desc`.",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "example": "desc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page, default is `100`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_debt_loans_response"
+                }
+              }
+            },
+            "description": "P2P loans successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Active loans",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/debt/offers": {
+      "get": {
+        "description": "Get active P2P loan offers that are not associated with any loans yet (Currently only supports P2P protocols like Lenfi and Levvy).",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name) to filter by",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Comma seperated value enabling you to filter to offers where token is used as `collateral`, `debt`, `interest` or a mix of them, default is `collateral,debt` filtering to offers where token is used as collateral OR debt.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "schema": {
+              "example": "collateral,debt",
+              "type": "string"
+            }
+          },
+          {
+            "description": "What should the results be sorted by. Options are `time`, `duration`. Default is `time`. `duration` is loan duration in seconds.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "schema": {
+              "example": "time",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Which direction should the results be sorted. Options are `asc`, `desc`. Default is `desc`.",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "example": "desc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page, default is `100`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_debt_offers_response"
+                }
+              }
+            },
+            "description": "P2P offers successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Loan offers",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/holders": {
+      "get": {
+        "description": "Get total number of holders for a specific token. This uses `coalesce(stake_address, address)`, so all addresses under one stake key will be aggregated into 1 holder.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_holders_response"
+                }
+              }
+            },
+            "description": "Holders successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token holders",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/holders/top": {
+      "get": {
+        "description": "Get top token holders.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `20`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 20,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_holders_top_response"
+                }
+              }
+            },
+            "description": "Top holders successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Top token holders",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/indicators": {
+      "get": {
+        "description": "Get indicator values (e.g. EMA, RSI) based on price data for a specific token. There are multiple parameters that can be passed, but some only apply to certain indicators. This will return the most recent values.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `12h`, `1d`, `3d`, `1w`, `1M`.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "schema": {
+              "example": "1d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The number of items to return. The maximum number of items that can be returned is 1000.",
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify which indicator to use. Options are `ma`, `ema`, `rsi`, `macd`, `bb`, `bbw`.",
+            "in": "query",
+            "name": "indicator",
+            "required": false,
+            "schema": {
+              "example": "ma",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Length of data to include. Used in `ma`, `ema`, `rsi`, `bb`, and `bbw`.",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "schema": {
+              "example": 14,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Length of data to include for smoothing. Used in `ema`. Most often is set to 2.",
+            "in": "query",
+            "name": "smoothingFactor",
+            "required": false,
+            "schema": {
+              "example": 2,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Length of shorter EMA to use in MACD. Only used in `macd`",
+            "in": "query",
+            "name": "fastLength",
+            "required": false,
+            "schema": {
+              "example": 12,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Length of longer EMA to use in MACD. Only used in `macd`",
+            "in": "query",
+            "name": "slowLength",
+            "required": false,
+            "schema": {
+              "example": 26,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Length of signal EMA to use in MACD. Only used in `macd`",
+            "in": "query",
+            "name": "signalLength",
+            "required": false,
+            "schema": {
+              "example": 9,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Standard deviation multiplier to use for upper and lower bands of Bollinger Bands (typically set to 2). Used in `bb` and `bbw`.",
+            "in": "query",
+            "name": "stdMult",
+            "required": false,
+            "schema": {
+              "example": 2,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Which quote currency to use when building price data (e.g. `ADA`, `USD`).",
+            "in": "query",
+            "name": "quote",
+            "required": false,
+            "schema": {
+              "example": "ADA",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_indicators_response"
+                }
+              }
+            },
+            "description": "Token indicator values successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token price indicators",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/links": {
+      "get": {
+        "description": "Get a specific token's social links, if they have been provided to TapTools.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_links_response"
+                }
+              }
+            },
+            "description": "Token links"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token links",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/mcap": {
+      "get": {
+        "description": "Get a specific token's supply and market cap information. We pull circulating supply information from [this repo](https://github.com/minswap/market-cap).",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_mcap_response"
+                }
+              }
+            },
+            "description": "Supply and market cap successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token market cap",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/ohlcv": {
+      "get": {
+        "description": "Get a specific token's trended (`open`, `high`, `low`, `close`, `volume`) price data. You can either pass a token unit to get aggregated data across all liquidity pools, or an `onchainID` for a specific pair (see `/token/pools`).",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Pair onchain ID to get ohlc data for",
+            "in": "query",
+            "name": "onchainID",
+            "required": false,
+            "schema": {
+              "example": "0be55d262b29f564998ff81efe21bdc0022621c12f15af08d0f2ddb1.39b9b709ac8605fc82116a2efc308181ba297c11950f0f350001e28f0e50868b",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `12h`, `1d`, `3d`, `1w`, `1M`.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "schema": {
+              "example": "1d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The number of intervals to return, e.g. if you want 180 days of data in 1d intervals, then pass `180` here.",
+            "in": "query",
+            "name": "numIntervals",
+            "required": false,
+            "schema": {
+              "example": 180,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_ohlcv_response"
+                }
+              }
+            },
+            "description": "Token ohlcv data successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token price OHLCV",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/pools": {
+      "get": {
+        "description": "Get a specific token's active liquidity pools. Can search for all token pools using `unit` or can search for specific pool with `onchainID`.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Liquidity pool onchainID",
+            "in": "query",
+            "name": "onchainID",
+            "required": false,
+            "schema": {
+              "example": "0be55d262b29f564998ff81efe21bdc0022621c12f15af08d0f2ddb1.39b9b709ac8605fc82116a2efc308181ba297c11950f0f350001e28f0e50868b",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Return only ADA pools or all pools (0, 1)",
+            "in": "query",
+            "name": "adaOnly",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_pools_response"
+                }
+              }
+            },
+            "description": "Liquidity pools successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token liquidity pools",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/prices": {
+      "post": {
+        "description": "Get an object with token units (policy + hex name) as keys and price as values for a list of policies and hex names. These prices are aggregated across all supported DEXs. Max batch size is `100` tokens.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/token_prices_body"
+              }
+            }
+          },
+          "description": "List of policy + hex names of tokens.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_prices_response"
+                }
+              }
+            },
+            "description": "Prices successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token prices",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/prices/chg": {
+      "get": {
+        "description": "Get a specific token's price percent change over various timeframes. Timeframe options include `[5m, 1h, 4h, 6h, 24h, 7d, 30d, 60d, 90d]`. All timeframes are returned by default.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "List of timeframes",
+            "in": "query",
+            "name": "timeframes",
+            "required": false,
+            "schema": {
+              "example": "1h,4h,24h,7d,30d",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_prices_chg_response"
+                }
+              }
+            },
+            "description": "Price changes returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token price percent change",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/quote": {
+      "get": {
+        "description": "Get current quote price (e.g, current ADA/USD price). This only returns the price of ADA against the specified quote currency.",
+        "parameters": [
+          {
+            "description": "Quote currency to use (USD, EUR, ETH, BTC). Default is `USD`.",
+            "in": "query",
+            "name": "quote",
+            "required": false,
+            "schema": {
+              "example": "USD",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_quote_response"
+                }
+              }
+            },
+            "description": "Current Quote price successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Quote price",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/quote/available": {
+      "get": {
+        "description": "Get all currently available quote currencies.",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_quote_available_response"
+                }
+              }
+            },
+            "description": "Available quote currencies successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Available quote currencies",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/top/liquidity": {
+      "get": {
+        "description": "Get tokens ranked by their DEX liquidity. This includes both AMM and order book liquidity.",
+        "parameters": [
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `10`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 10,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_top_liquidity_response"
+                }
+              }
+            },
+            "description": "Top liquidity tokens successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Top liquidity tokens",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/top/mcap": {
+      "get": {
+        "description": "Get tokens with top market cap in a descending order. This endpoint does exclude deprecated tokens (e.g. MELD V1 since there was a token migration to MELD V2).",
+        "parameters": [
+          {
+            "description": "Sort tokens by circulating market cap or fully diluted value. Options `[mcap, fdv]`.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "example": "mcap",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `20`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 20,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_top_mcap_response"
+                }
+              }
+            },
+            "description": "Top market cap tokens successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Top market cap tokens",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/top/volume": {
+      "get": {
+        "description": "Get tokens with top volume for a given timeframe.",
+        "parameters": [
+          {
+            "description": "Specify a timeframe in which to aggregate the data by. Options are `15m`, `1h`, `4h`, `12h`, `24h`, `7d`, `30d`, `90d`, `180d`, `1y`, `all`. Default is `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "24h",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `20`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 20,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_top_volume_response"
+                }
+              }
+            },
+            "description": "Top volume tokens successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Top volume tokens",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/trades": {
+      "get": {
+        "description": "Get token trades across the entire DEX market.",
+        "parameters": [
+          {
+            "description": "The time interval. Options are `1h`, `4h`, `24h`, `7d`, `30d`, `90d`, `180d`, `1y`, `all`. Defaults to `30d`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "30d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "What should the results be sorted by. Options are `amount`, `time`. Default is `amount`. Filters to only ADA trades if set to `amount`.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "schema": {
+              "example": "amount",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Which direction should the results be sorted. Options are `asc`, `desc`. Default is `desc`.",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "example": "desc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Optionally filter to a specific token by specifying a token unit (policy + hex name).",
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "example": "279c909f348e533da5808898f87f9a14bb2c3dfbbacccd631d927a3f534e454b",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter to only trades of a certain ADA amount.",
+            "in": "query",
+            "name": "minAmount",
+            "required": false,
+            "schema": {
+              "example": 1000,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter trades using a UNIX timestamp, will only return trades after this timestamp.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "example": 1704759422,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `10`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 10,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_market_trades_response"
+                }
+              }
+            },
+            "description": "Token trades successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Token trades",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/token/trading/stats": {
+      "get": {
+        "description": "Get aggregated trading stats for a particular token.",
+        "parameters": [
+          {
+            "description": "Token unit (policy + hex name)",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Specify a timeframe in which to aggregate the data by. Options are `[15m, 1h, 4h, 12h, 24h, 7d, 30d, 90d, 180d, 1y, all]`. Default is `24h`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "24h",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/token_trading_stats_response"
+                }
+              }
+            },
+            "description": "Trading stats successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Trading stats",
+        "tags": [
+          "Market \u00bb Tokens"
+        ]
+      }
+    },
+    "/transaction/utxos": {
+      "get": {
+        "description": "Get UTxOs from a specific transaction.",
+        "parameters": [
+          {
+            "description": "Transaction hash",
+            "in": "query",
+            "name": "hash",
+            "required": false,
+            "schema": {
+              "example": "8be33680ec04da1cc98868699c5462fbbf6975529fb6371669fa735d2972d69b",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/onchain_transaction_utxos"
+                }
+              }
+            },
+            "description": "Transaction UTxOs"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Transaction UTxOs",
+        "tags": [
+          "Onchain \u00bb Transaction"
+        ]
+      }
+    },
+    "/wallet/portfolio/positions": {
+      "get": {
+        "description": "Get wallet's current portfolio positions with supporting market data. This includes positions that are staked in a smart contract and LP farm positions (for supported protocols)",
+        "parameters": [
+          {
+            "description": "Address to query for",
+            "in": "query",
+            "name": "address",
+            "required": false,
+            "schema": {
+              "example": "stake1u8rphunzxm9lr4m688peqmnthmap35yt38rgvaqgsk5jcrqdr2vuc",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/portfolio_positions_response"
+                }
+              }
+            },
+            "description": "Portfolio positions successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Portfolio positions",
+        "tags": [
+          "Wallet \u00bb Portfolio"
+        ]
+      }
+    },
+    "/wallet/trades/tokens": {
+      "get": {
+        "description": "Get the token trade history for a particular wallet. Optionally pass a token unit to filter to a specific token.",
+        "parameters": [
+          {
+            "description": "Address to query for",
+            "in": "query",
+            "name": "address",
+            "required": true,
+            "schema": {
+              "example": "stake1u8rphunzxm9lr4m688peqmnthmap35yt38rgvaqgsk5jcrqdr2vuc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Token unit (policy + hex name) to filter by",
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "example": "8fef2d34078659493ce161a6c7fba4b56afefa8535296a5743f6958741414441",
+              "type": "string"
+            }
+          },
+          {
+            "description": "This endpoint supports pagination. Default page is `1`.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Specify how many items to return per page. Maximum is `100`, default is `100`.",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "example": 100,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/wallet_trades_tokens_response"
+                }
+              }
+            },
+            "description": "Wallet trade history successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "406": {
+            "$ref": "#/components/responses/406"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Trade history (tokens)",
+        "tags": [
+          "Wallet \u00bb Portfolio"
+        ]
+      }
+    },
+    "/wallet/value/trended": {
+      "get": {
+        "description": "Get historical trended value of an address in 4hr intervals. \nThis includes the value of all tokens, NFTs, LP/farm positions, custodial staking, and assets involved in active loans (either being lent or used as collateral).\n**NOTE** this does not include staking rewards unless the rewards are withdrew from rewards account.\n",
+        "parameters": [
+          {
+            "description": "Address to query for",
+            "in": "query",
+            "name": "address",
+            "required": true,
+            "schema": {
+              "example": "stake1u8rphunzxm9lr4m688peqmnthmap35yt38rgvaqgsk5jcrqdr2vuc",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The time interval. Options are `24h`, `7d`, `30d`, `90d`, `180d`, `1y`, `all`. Defaults to `30d`.",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "schema": {
+              "example": "30d",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Quote currency to use (ADA, USD, EUR, ETH, BTC). Default is `ADA`.",
+            "in": "query",
+            "name": "quote",
+            "required": false,
+            "schema": {
+              "example": "ADA",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/portfolio_value_trended_response"
+                }
+              }
+            },
+            "description": "Portfolio trended value successfully returned"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "406": {
+            "$ref": "#/components/responses/406"
+          },
+          "429": {
+            "$ref": "#/components/responses/429"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "summary": "Portfolio trended value",
+        "tags": [
+          "Wallet \u00bb Portfolio"
+        ]
+      }
+    }
+  },
+  "security": [
+    {
+      "ApiAuthKey": [
+        "x-api-key"
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "description": "TapTools OpenAPI",
+      "url": "https://openapi.taptools.io/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Metrics"
+    },
+    {
+      "name": "Market"
+    },
+    {
+      "name": "Market \u00bb NFTs"
+    },
+    {
+      "name": "Market \u00bb Tokens"
+    },
+    {
+      "name": "Onchain \u00bb Asset"
+    },
+    {
+      "name": "Onchain \u00bb Address"
+    },
+    {
+      "name": "Onchain \u00bb Transaction"
+    },
+    {
+      "name": "Wallet \u00bb Portfolio"
+    },
+    {
+      "name": "Integration"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Metrics",
+      "tags": [
+        "Metrics"
+      ]
+    },
+    {
+      "name": "Market",
+      "tags": [
+        "Market",
+        "Market \u00bb NFTs",
+        "Market \u00bb Tokens"
+      ]
+    },
+    {
+      "name": "Onchain",
+      "tags": [
+        "Onchain \u00bb Asset",
+        "Onchain \u00bb Address",
+        "Onchain \u00bb Transaction"
+      ]
+    },
+    {
+      "name": "Wallet",
+      "tags": [
+        "Wallet \u00bb Portfolio"
+      ]
+    },
+    {
+      "name": "Integration",
+      "tags": [
+        "Integration"
+      ]
+    }
+  ]
+}

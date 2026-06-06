@@ -1,0 +1,43 @@
+{
+  "schema": "capture-session-v1",
+  "session_id": "2026-06-06T00:00:00Z-taptools-api-preservation",
+  "source": "taptools-via-wayback",
+  "capture_date": "2026-06-06T00:00:00Z",
+  "operator": "cryptoleo79",
+  "source_authority_class": "C",
+  "capture_pattern": "mixed (spec bytes stored; pages wayback-pinned)",
+  "reason": "Preserve the TapTools API surface (OpenAPI spec) + terms + docs before the announced company wind-down (~mid-June 2026).",
+  "gaps": [],
+  "artifacts": [
+    {
+      "path": "api/taptools-openapi-v2.0.5.json",
+      "bytes_stored": true,
+      "sha256": "da599d9c7676c109072ceb439808ad300660c4b18300ef5764bcd3a36d4e9845",
+      "note": "OpenAPI 3.0 spec v2.0.5, 61 paths"
+    },
+    {
+      "path": "api/docs.custody.json",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260606063205id_/https://taptools.gitbook.io/taptools",
+      "sha256": "f38527b7a6b1166574de5c1d7cf6cddb5f91cb3c031920443c0dd950946b72c4"
+    },
+    {
+      "path": "api/openapi-ui.custody.json",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260606063223id_/https://openapi.taptools.io/",
+      "sha256": "9815410c8c100437a815aca7d6083111bcc2d75315fa9136b470e36ac18240b6"
+    },
+    {
+      "path": "api/subscription.custody.json",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20251214075607id_/https://www.taptools.io/openapi/subscription",
+      "sha256": "c3c62ddd47893556c1e3b58fdf075b6373029a87ef995c0c009a9d76e51a0882"
+    },
+    {
+      "path": "api/terms.custody.json",
+      "bytes_stored": false,
+      "wayback_url": "https://web.archive.org/web/20260315104228id_/https://taptools.io/terms",
+      "sha256": "716cb0ce360b66500c0173edfa14435d7e97b57e3ceae5207a8996d13a6b68e0"
+    }
+  ]
+}

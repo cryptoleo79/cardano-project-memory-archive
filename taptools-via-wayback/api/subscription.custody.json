@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://www.taptools.io/openapi/subscription",
+  "capture_date": "2026-06-06T00:00:00Z",
+  "capture_method": "wayback Save-Page-Now then curl -sL --user-agent \"cdo-preserve/1.0\" \"<wayback id_ url>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-06T00:00:00Z-taptools-api-preservation",
+  "sha256": "c3c62ddd47893556c1e3b58fdf075b6373029a87ef995c0c009a9d76e51a0882",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "C",
+  "wayback_url": "https://web.archive.org/web/20251214075607id_/https://www.taptools.io/openapi/subscription",
+  "bytes_stored": false,
+  "notes": "TapTools API subscription / pricing page. Pinned to the Wayback Machine ahead of the TapTools company wind-down (~mid-June 2026)."
+}

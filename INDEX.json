@@ -3,14 +3,14 @@
   "archive_version": "1.0.0",
   "memory_layer_reference": "https://github.com/cryptoleo79/cardano-delegation-observatory/blob/main/docs/CARDANO_MEMORY_LAYER.md",
   "registry_reference": "https://github.com/cryptoleo79/cardano-delegation-observatory/blob/main/docs/PROJECT_MEMORY_REGISTRY.md",
-  "last_updated": "2026-06-03T08:00:00Z",
-  "last_session_id": "2026-06-03T08:00:00Z-taptools-rankings",
+  "last_updated": "2026-06-06T00:00:00Z",
+  "last_session_id": "2026-06-06T00:00:00Z-taptools-api-preservation",
   "subfolders": {
     "taptools-via-wayback": {
       "source_authority_class": "C",
       "capture_pattern": "wayback-mirror",
-      "artifact_count": 22,
-      "last_capture_date": "2026-06-03T08:00:00Z",
+      "artifact_count": 27,
+      "last_capture_date": "2026-06-06",
       "subfolder_index": "taptools-via-wayback/INDEX.json",
       "notes": "Live taptools.io is a Next.js SPA returning empty shells. Preservation surface is the Wayback Machine's pre-SPA snapshots."
     },

@@ -3,10 +3,11 @@
   "source": "taptools-via-wayback",
   "source_authority_class": "C",
   "capture_pattern": "wayback-mirror",
-  "last_updated": "2026-06-03T08:00:00Z",
-  "artifact_count": 22,
+  "last_updated": "2026-06-06T00:00:00Z",
+  "artifact_count": 27,
   "session_log_paths": [
-    "CAPTURE_LOG/2026-06-03T08:00:00Z-taptools-rankings.json"
+    "CAPTURE_LOG/2026-06-03T08:00:00Z-taptools-rankings.json",
+    "CAPTURE_LOG/2026-06-06T00:00:00Z-taptools-api-preservation.json"
   ],
-  "notes": "Wayback Machine snapshots of pre-SPA taptools.io ranking grids, CDX-enumerated and per-snapshot mirrored with chain-of-custody. rankings/charts/ holds the historical token ranking time series (5 content-bearing snapshots 2022-05..2022-10 carry server-rendered top-N ranked lists + featured-token metadata; later snapshots document the SPA conversion). _inventory/cdx-charts-all.jsonl is the historical-project-metadata index of all archived /charts/* URLs. Per-asset chart pages are indexed but not mirrored (scope: not trader tooling)."
+  "notes": "Wayback Machine snapshots of pre-SPA taptools.io ranking grids, CDX-enumerated and per-snapshot mirrored with chain-of-custody. rankings/charts/ holds the historical token ranking time series (5 content-bearing snapshots 2022-05..2022-10 carry server-rendered top-N ranked lists + featured-token metadata; later snapshots document the SPA conversion). _inventory/cdx-charts-all.jsonl is the historical-project-metadata index of all archived /charts/* URLs. Per-asset chart pages are indexed but not mirrored (scope: not trader tooling). | api/ holds the preserved TapTools OpenAPI spec (v2.0.5, 61 paths, bytes stored) plus wayback-pins of the terms/docs/subscription pages, captured 2026-06-06 ahead of the TapTools wind-down."
 }

@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://openapi.taptools.io/",
+  "capture_date": "2026-06-06T00:00:00Z",
+  "capture_method": "curl the public ReDoc docs page (openapi.taptools.io) and extract the embedded OpenAPI 3.0 spec object from the Redoc.init(...) call; stored as JSON",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-06T00:00:00Z-taptools-api-preservation",
+  "sha256": "da599d9c7676c109072ceb439808ad300660c4b18300ef5764bcd3a36d4e9845",
+  "content_type": "application/json",
+  "http_status": 200,
+  "source_authority_class": "C",
+  "wayback_url": null,
+  "bytes_stored": true,
+  "notes": "TapTools OpenAPI 3.0 spec v2.0.5 (61 paths) preserved ahead of the TapTools company wind-down (announced 2026-06-02; API expected offline ~mid-June 2026). Extracted from the publicly-served docs page. This is the canonical record of the TapTools API surface."
+}

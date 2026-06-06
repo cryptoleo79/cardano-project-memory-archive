@@ -1,0 +1,15 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://taptools.io/terms",
+  "capture_date": "2026-06-06T00:00:00Z",
+  "capture_method": "wayback-pin of existing snapshot; curl -sL --user-agent \"cdo-preserve/1.0\" \"<wayback id_ url>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-06T00:00:00Z-taptools-api-preservation",
+  "sha256": "716cb0ce360b66500c0173edfa14435d7e97b57e3ceae5207a8996d13a6b68e0",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "C",
+  "wayback_url": "https://web.archive.org/web/20260315104228id_/https://taptools.io/terms",
+  "bytes_stored": false,
+  "notes": "TapTools Terms of Service (Wayback snapshot 2026-03-15, the most recent archived copy; live page was 429-gated). Preserved ahead of the TapTools wind-down. Redistribution clause is load-bearing for any data-reuse decision."
+}
