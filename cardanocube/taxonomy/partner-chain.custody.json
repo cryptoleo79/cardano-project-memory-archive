@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://www.cardanocube.com/categories/partner-chain",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "direct fetch -A \"cdo-preserve/1.0\"; SHA-256 computed, bytes not stored; wayback snapshot pending (SPN 520 at capture time)",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "505f1904f06e0656989ce68eeae64a2fed9a2c91ee81f33301e5c4046eee62b4",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": null,
+  "bytes_stored": false,
+  "category_slug": "partner-chain",
+  "project_count": 2,
+  "notes": "cardanocube category listing for \"partner-chain\", 2 projects; the per-category classification layer of Project Memory. Wayback snapshot pending."
+}

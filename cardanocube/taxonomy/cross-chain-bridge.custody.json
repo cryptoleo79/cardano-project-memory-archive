@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/cross-chain-bridge",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "4fe996b36aec029c733ec17c563816dd9adadd27899364330cc24f81a8785aa1",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20250426045830id_/https://cardanocube.com/categories/cross-chain-bridge",
+  "bytes_stored": false,
+  "category_slug": "cross-chain-bridge",
+  "project_count": 6,
+  "notes": "cardanocube category listing for \"cross-chain-bridge\", 6 projects; the per-category classification layer of Project Memory."
+}

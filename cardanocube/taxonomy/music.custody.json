@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/music",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "916045e40bee0d08dfd26d8f6fd3506fe1b040197e4015b9e637a72b3283c025",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20260505020927id_/https://cardanocube.com/categories/music",
+  "bytes_stored": false,
+  "category_slug": "music",
+  "project_count": 2,
+  "notes": "cardanocube category listing for \"music\", 2 projects; the per-category classification layer of Project Memory."
+}

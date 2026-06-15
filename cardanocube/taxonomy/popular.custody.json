@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/popular",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "70b66cd44cd159c475dcdeed4956e9df9de43b6f8d30cff8396bcf278acd212e",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20260509193424id_/https://cardanocube.com/categories/popular",
+  "bytes_stored": false,
+  "category_slug": "popular",
+  "project_count": 20,
+  "notes": "cardanocube category listing for \"popular\", 20 projects; the per-category classification layer of Project Memory."
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/prediction-market",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "eb68c58a067f4a68bb55ffbe5565332176de87e4036759f41e30d87cde992b0b",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20251205032350id_/https://cardanocube.com/categories/prediction-market",
+  "bytes_stored": false,
+  "category_slug": "prediction-market",
+  "project_count": 2,
+  "notes": "cardanocube category listing for \"prediction-market\", 2 projects; the per-category classification layer of Project Memory."
+}

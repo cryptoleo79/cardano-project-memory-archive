@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/ai",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "12d76d572cead5e51ac2a2ec2956e8b2f6fe0e9f2963779e88b403921658b232",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20260603133517id_/https://cardanocube.com/categories/ai",
+  "bytes_stored": false,
+  "category_slug": "ai",
+  "project_count": 13,
+  "notes": "cardanocube category listing for \"ai\", 13 projects; the per-category classification layer of Project Memory."
+}

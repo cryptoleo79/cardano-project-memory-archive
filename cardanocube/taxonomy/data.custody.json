@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/data",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "6ec37910263b837238a06fd7ed21fc8546e2e99263f95864e8cca815f9b388c2",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20251205030602id_/https://cardanocube.com/categories/data",
+  "bytes_stored": false,
+  "category_slug": "data",
+  "project_count": 4,
+  "notes": "cardanocube category listing for \"data\", 4 projects; the per-category classification layer of Project Memory."
+}

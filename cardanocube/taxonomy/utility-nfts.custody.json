@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/utility-nfts",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "9e942dd886f24264f95b0b15a1e7ea38be4610104b5c336d9b27d1afd35e20f3",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20260603133952id_/https://cardanocube.com/categories/utility-nfts",
+  "bytes_stored": false,
+  "category_slug": "utility-nfts",
+  "project_count": 20,
+  "notes": "cardanocube category listing for \"utility-nfts\", 20 projects; the per-category classification layer of Project Memory."
+}

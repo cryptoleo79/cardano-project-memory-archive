@@ -1,0 +1,17 @@
+{
+  "schema": "custody-v1",
+  "source_url": "https://cardanocube.com/categories/marketplaces",
+  "capture_date": "2026-06-15T22:29:24Z",
+  "capture_method": "wayback-pin: availability then curl -sL -A \"cdo-preserve/1.0\" \"<wayback id_>\"; SHA-256 computed, bytes not stored",
+  "capture_operator": "cryptoleo79",
+  "capture_session_id": "2026-06-15T22:29:24Z-cardanocube-categories-13",
+  "sha256": "1bfb3cd8148c98d0b32f0f50c13fbc22f982ee1e4ca6285cf362b252a2d903fc",
+  "content_type": "text/html",
+  "http_status": 200,
+  "source_authority_class": "D",
+  "wayback_url": "https://web.archive.org/web/20260603133517id_/https://cardanocube.com/categories/marketplaces",
+  "bytes_stored": false,
+  "category_slug": "marketplaces",
+  "project_count": 20,
+  "notes": "cardanocube category listing for \"marketplaces\", 20 projects; the per-category classification layer of Project Memory."
+}
