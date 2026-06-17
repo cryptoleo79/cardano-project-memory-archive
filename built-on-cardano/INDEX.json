@@ -3,8 +3,10 @@
   "source": "built-on-cardano",
   "source_authority_class": "B",
   "capture_pattern": "wayback-mirror",
-  "last_updated": "2026-06-03T05:06:34Z",
-  "artifact_count": 0,
-  "session_log_paths": [],
+  "last_updated": "2026-06-17T01:32:51Z",
+  "artifact_count": 1,
+  "session_log_paths": [
+    "ecosystem/ecosystem-all.custody.json"
+  ],
   "notes": "builtoncardano.com curated directory."
 }
