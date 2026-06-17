@@ -1,15 +1,15 @@
 {
   "schema": "custody-v1",
-  "source_url": "https://builtoncardano.com/ecosystem/all",
+  "source_url": "https://builtoncardano.com/ecosystem (61 category pages)",
   "capture_date": "2026-06-17T01:32:51Z",
-  "capture_method": "direct fetch -A \"cdo-preserve/1.0\"; project link data parsed from the page __NEXT_DATA__; SHA-256 of fetched HTML computed, bytes not stored",
+  "capture_method": "direct fetch -A \"cdo-preserve/1.0\" across 61 ecosystem category pages; project link data parsed from each page __NEXT_DATA__; SHA-256 over the concatenated captured pages, bytes not stored",
   "capture_operator": "cryptoleo79",
   "capture_session_id": "2026-06-17T01:32:51Z-builtoncardano-ecosystem-enrichment",
-  "sha256": "dd16fb48d83fe5082f17f008132301112014d3af08b53713b633a34580ae53f2",
+  "sha256": "6ebd616882ed067b64d201f16fa69f15f7bd4b7bbf5e3c89d5086877e23a903e",
   "content_type": "text/html",
   "http_status": 200,
   "source_authority_class": "B",
   "wayback_url": "https://web.archive.org/web/20260211002257id_/https://builtoncardano.com/ecosystem/all",
   "bytes_stored": false,
-  "notes": "Built on Cardano ecosystem directory listing. Used to enrich Project Memory with sourced project links (website/github/documentation/whitepaper). Audit links are not exposed by this source and were not added."
+  "notes": "Built on Cardano ecosystem category pages. Used to enrich Project Memory with sourced project links (website/github/documentation/whitepaper) for 510 projects. Audit links are not exposed by this source and were not added."
 }
